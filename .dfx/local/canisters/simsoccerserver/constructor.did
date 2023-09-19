@@ -1,0 +1,9 @@
+type StatusCode = nat16;
+type Result = 
+ variant {
+   err: StatusCode;
+   ok: text;
+ };
+service : {
+    play_match : (nat64) -> (text) query;
+}

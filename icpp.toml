@@ -1,0 +1,10 @@
+[build-wasm]
+canister          = "SimSoccerServer"
+did_path          = "SimSoccerServer.did"
+cpp_paths         = ["SimSoccerServer.cpp","./Common/*/*.cpp", "./SimSoccer/*.cpp"]
+cpp_header_paths  = ["SimSoccerServer.h"]
+cpp_compile_flags = ["-MMD", "-MP", "-D LINUX"]
+cpp_link_flags    = []
+c_paths           = []
+c_header_paths    = []
+c_compile_flags   = []

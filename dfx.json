@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "canisters": {
+    "simsoccerserver": {
+      "type": "custom",
+      "candid": "build/SimSoccerServer.did",
+      "wasm": "build/SimSoccerServer.wasm"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  }
+}
