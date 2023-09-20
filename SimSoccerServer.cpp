@@ -37,7 +37,7 @@ const int MILLI_IN_MINUTE = 60 * 20;
 const int SECOND_MAX_VALUE = 60;
 
 const bool LOG_MATCH_OUTPUT = true;
-const int SNAPSHOT_RATE = 50;
+const int SNAPSHOT_RATE = 10;
 
 int mTickCount = 0;
 bool mMatchFinished = false;
