@@ -16,22 +16,12 @@
 
 #include "../2D/Vector2D.h"
 #include "BaseGameEntity.h"
-
+#include "../Game/PhysicsManager.h"
 
 
 class MovingEntity : public BaseGameEntity
 {
 protected:
-  
-  Vector2D    m_vVelocity;
-  
-  //a normalized vector pointing in the direction the entity is heading. 
-  Vector2D    m_vHeading;
-
-  //a vector perpendicular to the heading vector
-  Vector2D    m_vSide; 
-
-  double      m_dMass;
   
   //the maximum speed this entity may travel at.
   double      m_dMaxSpeed;
@@ -46,38 +36,35 @@ protected:
 public:
 
 
-  MovingEntity(Vector2D position,
-               double   radius,
-               Vector2D velocity,
-               double   max_speed,
-               Vector2D heading,
-               double   mass,
-               Vector2D scale,
+  MovingEntity(BodyInterface& bodyInterface, BodyID body_id,
+                double   max_speed,
                double   turn_rate,
-               double   max_force):BaseGameEntity(BaseGameEntity::GetNextValidID()),
-                                  m_vHeading(heading),
-                                  m_vVelocity(velocity),
-                                  m_dMass(mass),
-                                  m_vSide(m_vHeading.Perp()),
+               double   max_force):BaseGameEntity(BaseGameEntity::GetNextValidID(), bodyInterface, body_id),
                                   m_dMaxSpeed(max_speed),
                                   m_dMaxTurnRate(turn_rate),
                                   m_dMaxForce(max_force)
   {
-    m_vPosition = position;
-    m_dBoundingRadius = radius; 
-    m_vScale = scale;
   }
 
 
   virtual ~MovingEntity(){}
 
   //accessors
-  Vector2D  Velocity()const{return m_vVelocity;}
-  void      SetVelocity(const Vector2D& NewVel){m_vVelocity = NewVel;}
+  Vec3  Velocity()const{return m_BodyInterface.GetLinearVelocity(m_EntityPhysicsID);}
+  void      SetVelocity(const Vec3& NewVel){ m_BodyInterface.SetLinearVelocity(m_EntityPhysicsID, NewVel);}
   
-  double    Mass()const{return m_dMass;}
+  double    Mass()const{
+
+      float mass = 0;
+      BodyLockRead lock(PhysicsManager::Instance()->GetPhysicsSystem().GetBodyLockInterface(), m_EntityPhysicsID);
+      if (lock.Succeeded())
+      {
+          mass = 1.0f / lock.GetBody().GetMotionProperties()->GetInverseMass();
+      }
+      return mass;
+  }
   
-  Vector2D  Side()const{return m_vSide;}
+  Vec3  Side()const{return Heading().Cross(Vec3(0, 1, 0)); }
 
   double    MaxSpeed()const{return m_dMaxSpeed;}                       
   void      SetMaxSpeed(double new_speed){m_dMaxSpeed = new_speed;}
@@ -85,13 +72,20 @@ public:
   double    MaxForce()const{return m_dMaxForce;}
   void      SetMaxForce(double mf){m_dMaxForce = mf;}
 
-  bool      IsSpeedMaxedOut()const{return m_dMaxSpeed*m_dMaxSpeed >= m_vVelocity.LengthSq();}
-  double    Speed()const{return m_vVelocity.Length();}
-  double    SpeedSq()const{return m_vVelocity.LengthSq();}
+  bool      IsSpeedMaxedOut()const{return m_dMaxSpeed*m_dMaxSpeed >= Velocity().LengthSq();}
+  double    Speed()const{return Velocity().Length();}
+  double    SpeedSq()const{return Velocity().LengthSq();}
   
-  Vector2D  Heading()const{return m_vHeading;}
-  void      SetHeading(Vector2D new_heading);
-  bool      RotateHeadingToFacePosition(Vector2D target);
+  Vec3  Heading()const{
+      return m_BodyInterface.GetRotation(m_EntityPhysicsID) * Vec3(0, 0, 1);
+  }
+  void Rotate(float degrees) {
+      //float degrees_rad = DegreesToRadians(degrees);
+      float heading_degrees = m_BodyInterface.GetRotation(m_EntityPhysicsID).GetRotationAngle(Vec3(0, -1, 0));
+      m_BodyInterface.SetRotation(m_EntityPhysicsID, Quat::sRotation(Vec3(0, -1, 0), degrees + heading_degrees),EActivation::Activate);
+  }
+  //void      SetHeading(Vec3 new_heading);
+  bool      RotateHeadingToFacePosition(Vec3 target);
 
   double    MaxTurnRate()const{return m_dMaxTurnRate;}
   void      SetMaxTurnRate(double val){m_dMaxTurnRate = val;}
@@ -107,11 +101,15 @@ public:
 //
 //  returns true when the heading is facing in the desired direction
 //-----------------------------------------------------------------------------
-inline bool MovingEntity::RotateHeadingToFacePosition(Vector2D target)
+inline bool MovingEntity::RotateHeadingToFacePosition(Vec3 target)
 {
-  Vector2D toTarget = Vec2DNormalize(target - m_vPosition);
+  Vec3 position = m_BodyInterface.GetCenterOfMassPosition(m_EntityPhysicsID);
+  Vec3 toTarget = (target - position);
+  toTarget = toTarget.Normalized();
 
-  double dot = m_vHeading.Dot(toTarget);
+  Vec3 heading = Heading();
+  heading = heading.Normalized();
+  double dot = heading.Dot(toTarget);
 
   //some compilers lose acurracy so the value is clamped to ensure it
   //remains valid for the acos
@@ -120,24 +118,14 @@ inline bool MovingEntity::RotateHeadingToFacePosition(Vector2D target)
   //first determine the angle between the heading vector and the target
   double angle = acos(dot);
 
-  //return true if the player is facing the target
-  if (angle < 0.00001) return true;
-
   //clamp the amount to turn to the max turn rate
   if (angle > m_dMaxTurnRate) angle = m_dMaxTurnRate;
   
-  //The next few lines use a rotation matrix to rotate the player's heading
-  //vector accordingly
-	C2DMatrix RotationMatrix;
-  
-  //notice how the direction of rotation has to be determined when creating
-  //the rotation matrix
-	RotationMatrix.Rotate(angle * m_vHeading.Sign(toTarget));	
-  RotationMatrix.TransformVector2Ds(m_vHeading);
-  RotationMatrix.TransformVector2Ds(m_vVelocity);
+  //return true if the player is facing the target
+  if (angle < 0.05) return true;
 
-  //finally recreate m_vSide
-  m_vSide = m_vHeading.Perp();
+  m_BodyInterface.SetAngularVelocity(m_EntityPhysicsID, Vec3(0,0,0));
+  Rotate(angle);
 
   return false;
 }
@@ -149,15 +137,15 @@ inline bool MovingEntity::RotateHeadingToFacePosition(Vector2D target)
 //  new heading is valid this fumction sets the entity's heading and side 
 //  vectors accordingly
 //-----------------------------------------------------------------------------
-inline void MovingEntity::SetHeading(Vector2D new_heading)
-{
-  assert( (new_heading.LengthSq() - 1.0) < 0.00001);
-  
-  m_vHeading = new_heading;
-
-  //the side vector must always be perpendicular to the heading
-  m_vSide = m_vHeading.Perp();
-}
+//inline void MovingEntity::SetHeading(Vec3 new_heading)
+//{
+//  assert( (new_heading.LengthSq() - 1.0) < 0.00001);
+//  
+//  m_vHeading = new_heading;
+//
+//  //the side vector must always be perpendicular to the heading
+//  m_vSide = m_vHeading.Perp();
+//}
 
 
 

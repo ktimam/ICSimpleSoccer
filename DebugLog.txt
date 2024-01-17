@@ -1,0 +1,1503 @@
+Player 2 enters wait state
+Player 3 enters wait state
+Player 4 enters wait state
+Player 5 enters wait state
+Player 7 enters wait state
+Player 8 enters wait state
+Player 9 enters wait state
+Player 10 enters wait state
+Player 2 enters chase state
+Player 7 enters chase state
+Player 2 enters kick state
+Player 7 enters kick state
+Player 2 enters chase state
+Player 7 passes the ball with force 147.324  to player 8  Target is 399.874, 0, 89.1073
+Player 8 enters receive state (Using Arrive)
+Player 7 enters wait state
+Player 7 enters support state
+Player 2 enters kick state
+Player 7 enters ReturnToHome state
+Player 8 enters chase state
+Player 2 attempts a shot at 684, 0, 224
+Player 2 enters wait state
+Player 3 enters support state
+Player 7 enters chase state
+Player 8 enters ReturnToHome state
+Player 2 enters chase state
+Player 8 enters wait state
+Player 7 enters ReturnToHome state
+Player 8 enters chase state
+Player 8 enters ReturnToHome state
+Player 10 enters chase state
+Player 8 enters wait state
+Player 2 received request from 3 to make pass
+Player 2 cannot make requested pass <cannot kick ball>
+Player 2 received request from 3 to make pass
+Player 2 cannot make requested pass <cannot kick ball>
+Player 2 received request from 3 to make pass
+Player 2 cannot make requested pass <cannot kick ball>
+Player 2 received request from 3 to make pass
+Player 2 cannot make requested pass <cannot kick ball>
+Player 10 enters ReturnToHome state
+Player 10 enters wait state
+Player 2 received request from 3 to make pass
+Player 2 cannot make requested pass <cannot kick ball>
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 7 enters wait state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 
+2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 attempts a shot at 684, 0, 224
+Player 2 enters wait state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 
+2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 enters dribble state
+Player 2 enters chase state
+Player 2 enters kick state
+Player 2 attempts a shot at 684, 0, 224
+Player 2 enters wait state
+Player 2 enters chase state
+Player 2 enters kick state
+Goaly has ball / ball behind player
+Player 2 enters chase state
+Player 2 enters ReturnToHome state
+Player 3 enters ReturnToHome state
+Player 4 enters ReturnToHome state
+Player 5 enters ReturnToHome state
+Player 7 enters ReturnToHome state
+Player 8 enters ReturnToHome state
+Player 9 enters ReturnToHome state
+Player 10 enters ReturnToHome state
+Player 7 enters wait state
+Player 8 enters wait state
+Player 9 enters wait state
+Player 10 enters wait state
+Player 7 enters receive state (Using Arrive)
+Player 2 enters chase state
+Player 2 enters ReturnToHome state
+Player 3 enters ReturnToHome state
+Player 4 enters ReturnToHome state
+Player 5 enters ReturnToHome state
+Player 7 enters ReturnToHome state
+Player 8 enters ReturnToHome state
+Player 9 enters ReturnToHome state
+Player 10 enters ReturnToHome state
+Player 7 enters wait state
+Player 8 enters wait state
+Player 9 enters wait state
+Player 10 enters wait state
+Player 7 enters receive state (Using Arrive)
+Player 2 enters chase state
+Player 2 enters ReturnToHome state
+Player 3 enters ReturnToHome state
+Player 4 enters ReturnToHome state
+Player 5 enters ReturnToHome state
+Player 7 enters ReturnToHome state
+Player 8 enters ReturnToHome state
+Player 9 enters ReturnToHome state
+Player 10 enters ReturnToHome state
+Player 7 enters wait state
+Player 8 enters wait state
+Player 9 enters wait state
+Player 10 enters wait state
+Player 7 enters receive state (Using Arrive)
+Player 2 enters chase state
+Player 2 enters ReturnToHome state
+Player 3 enters ReturnToHome state
+Player 4 enters ReturnToHome state
+Player 5 enters ReturnToHome state
+Player 7 enters ReturnToHome state
+Player 8 enters ReturnToHome state
+Player 9 enters ReturnToHome state
+Player 10 enters ReturnToHome state
+Player 7 enters wait state
+Player 8 enters wait state
+Player 9 enters wait state
+Player 10 enters wait state
+Player 7 enters receive state (Using Arrive)
+Player 2 enters chase state
+Player 2 enters ReturnToHome state
+Player 3 enters ReturnToHome state
+Player 4 enters ReturnToHome state
+Player 5 enters ReturnToHome state
+Player 7 enters ReturnToHome state
+Player 8 enters ReturnToHome state
+Player 9 enters ReturnToHome state
+Player 10 enters ReturnToHome state
+Player 7 enters wait state
+Player 8 enters wait state
+Player 9 enters wait state
+Player 10 enters wait state
+Player 7 enters receive state (Using Arrive)
+Player 2 enters chase state
+Player 2 enters ReturnToHome state
+Player 3 enters chase state
+Player 4 enters wait state
+Player 5 enters wait state
+Player 7 enters chase state
+Player 7 enters kick state
+Player 8 enters support state
+Player 7 enters dribble state
+Player 7 enters chase state
+Player 7 enters kick state
+Player 7 enters dribble state
+Player 7 enters chase state
+Player 7 enters kick state
+Goaly has ball / ball behind player
+Player 7 enters chase state
+Player 7 enters kick state
+Goaly has ball / ball behind player
+Player 7 enters chase state
+Player 7 enters kick state
+Player 7 enters dribble state
+Player 7 enters chase state
+Player 3 enters ReturnToHome state
+Player 4 enters chase state
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 4 enters ReturnToHome state
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 4 enters wait state
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 2 enters wait state
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 3 enters wait state
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 received request from 8 to make pass
+Player 7 cannot make requested pass <cannot kick ball>
+Player 7 enters kick state
+Player 7 enters dribble state
+Player 7 enters chase state
+Player 7 enters kick state
+Player 7 enters dribble state
+Player 7 enters chase state
+Player 7 enters kick state
+Player 7 enters dribble state
+Player 7 enters chase state
+Player 7 enters kick state
+Player 7 enters dribble state
+Player 7 enters chase state
+Player 7 enters kick state
+Player 7 enters dribble state
+Player 

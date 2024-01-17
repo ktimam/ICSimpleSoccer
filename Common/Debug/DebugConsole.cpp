@@ -196,7 +196,7 @@ LRESULT CALLBACK DebugConsole::DebugWindowProc(HWND hwnd,
           }
 
           std::vector<std::string>::iterator beg = m_Buffer.begin() + StartIndex;
-          std::vector<std::string>::iterator end = m_Buffer.begin() + StartIndex+PageSize+1;
+          std::vector<std::string>::iterator end = m_Buffer.end();// m_Buffer.begin() + StartIndex + PageSize + 1;
 
           int line=0;
 

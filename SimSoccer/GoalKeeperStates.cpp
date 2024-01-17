@@ -246,7 +246,7 @@ void PutBallBackInPlay::Enter(GoalKeeper* keeper)
 void PutBallBackInPlay::Execute(GoalKeeper* keeper)
 {
   PlayerBase*  receiver = NULL;
-  Vector2D     BallTarget;
+  Vec3     BallTarget;
     
   //test if there are players further forward on the field we might
   //be able to pass to. If so, make a pass.
@@ -257,7 +257,7 @@ void PutBallBackInPlay::Execute(GoalKeeper* keeper)
                               Prm.GoalkeeperMinPassDist))
   {     
     //make the pass   
-    keeper->Ball()->Kick(Vec2DNormalize(BallTarget - keeper->Ball()->Pos()),
+    keeper->Ball()->Kick((BallTarget - keeper->Ball()->Pos()).Normalized(),
                          Prm.MaxPassingForce);
 
     //goalkeeper no longer has ball 
@@ -276,6 +276,6 @@ void PutBallBackInPlay::Execute(GoalKeeper* keeper)
     return;
   }  
 
-  keeper->SetVelocity(Vector2D());
+  keeper->SetVelocity(Vec3());
 }
 

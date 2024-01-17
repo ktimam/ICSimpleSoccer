@@ -5,12 +5,12 @@ int BaseGameEntity::m_iNextValidID = 0;
 
 //------------------------------ ctor -----------------------------------------
 //-----------------------------------------------------------------------------
-BaseGameEntity::BaseGameEntity(int ID):m_dBoundingRadius(0.0),
-                                       m_vScale(Vector2D(1.0,1.0)),
-                                       m_iType(default_entity_type),
-                                       m_bTag(false)
+BaseGameEntity::BaseGameEntity(int ID, BodyInterface& bodyInterface, BodyID body_id):m_iType(default_entity_type),
+                                       m_bTag(false),
+                                       m_BodyInterface(bodyInterface)
 {
   SetID(ID);
+  m_EntityPhysicsID = body_id;
 }
 
 //----------------------------- SetID -----------------------------------------

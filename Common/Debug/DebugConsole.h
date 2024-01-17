@@ -40,7 +40,7 @@ const int DEBUG_WINDOW_WIDTH  = 400;
 const int DEBUG_WINDOW_HEIGHT = 400;
 
 //undefine DEBUG to send all debug messages to hyperspace (a sink - see below)
-//#define DEBUG
+#define DEBUG
 #ifdef DEBUG
 #define debug_con *(DebugConsole::Instance())
 #else

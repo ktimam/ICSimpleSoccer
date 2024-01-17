@@ -27,7 +27,7 @@ class SoccerBall : public MovingEntity
 private:
 
   //keeps a record of the ball's position at the last update
-  Vector2D                  m_vOldPos;
+  Vec3                  m_vOldPos;
 
   //a local reference to the Walls that make up the pitch boundary
   const std::vector<Wall2D>& m_PitchBoundary;                                      
@@ -38,23 +38,17 @@ private:
 public:
     //tests to see if the ball has collided with a ball and reflects 
   //the ball's velocity accordingly
-  void TestCollisionWithWalls(const std::vector<Wall2D>& walls);
+  //void TestCollisionWithWalls(const std::vector<Wall2D>& walls);
 
-  SoccerBall(Vector2D           pos,            
-             double               BallSize,
-             double               mass,
+  SoccerBall(BodyInterface& bodyInterface, BodyID body_id,
              std::vector<Wall2D>& PitchBoundary):
   
       //set up the base class
-      MovingEntity(pos,
-                  BallSize,
-                  Vector2D(0,0),
+      MovingEntity(bodyInterface, body_id, 
                   -1.0,                //max speed - unused
-                  Vector2D(0,1),
-                  mass,
-                  Vector2D(1.0,1.0),  //scale     - unused
                   0,                   //turn rate - unused
                   0),                  //max force - unused
+      m_vOldPos(Vec3()),
      m_PitchBoundary(PitchBoundary)
   {}
   
@@ -68,27 +62,27 @@ public:
   bool      HandleMessage(const Telegram& msg){return false;}
 
   //this method applies a directional force to the ball (kicks it!)
-  void      Kick(Vector2D direction, double force);
+  void      Kick(Vec3 direction, double force);
 
   //given a kicking force and a distance to traverse defined by start
   //and finish points, this method calculates how long it will take the
   //ball to cover the distance.
-  double    TimeToCoverDistance(Vector2D from,
-                               Vector2D to,
+  double    TimeToCoverDistance(Vec3 from,
+      Vec3 to,
                                double     force)const;
 
   //this method calculates where the ball will in 'time' seconds
-  Vector2D FuturePosition(double time)const;
+  Vec3 FuturePosition(double time)const;
 
   //this is used by players and goalkeepers to 'trap' a ball -- to stop
   //it dead. That player is then assumed to be in possession of the ball
   //and m_pOwner is adjusted accordingly
-  void      Trap(){m_vVelocity.Zero();}  
+  void      Trap(){ m_BodyInterface.SetLinearAndAngularVelocity(m_EntityPhysicsID, Vec3(), Vec3());}
 
-  Vector2D  OldPos()const{return m_vOldPos;}
+  Vec3  OldPos()const{return m_vOldPos;}
   
   //this places the ball at the desired location and sets its velocity to zero
-  void      PlaceAtPosition(Vector2D NewPos);
+  void      PlaceAtPosition(Vec3 NewPos);
 };
 
 

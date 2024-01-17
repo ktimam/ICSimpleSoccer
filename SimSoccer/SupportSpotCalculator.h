@@ -15,7 +15,6 @@
 #include <vector>
 
 #include "../Common/Game/Region.h"
-#include "../Common/2D/Vector2D.h"
 //#include "Common/misc/Cgdi.h"
 
 
@@ -37,11 +36,11 @@ public:
   struct SupportSpot
   {
     
-    Vector2D  m_vPos;
+    Vec3  m_vPos;
 
     double    m_dScore;
 
-    SupportSpot(Vector2D pos, double value):m_vPos(pos),
+    SupportSpot(Vec3 pos, double value):m_vPos(pos),
                                             m_dScore(value)
     {}
   };
@@ -78,12 +77,12 @@ public:
 
   //this method iterates through each possible spot and calculates its
   //score.
-  Vector2D  DetermineBestSupportingPosition();
+  Vec3  DetermineBestSupportingPosition();
 
   //returns the best supporting spot if there is one. If one hasn't been
   //calculated yet, this method calls DetermineBestSupportingPosition and
   //returns the result.
-  Vector2D  GetBestSupportingSpot();
+  Vec3  GetBestSupportingSpot();
 };
 
 

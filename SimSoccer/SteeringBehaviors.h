@@ -14,8 +14,30 @@
 //#include <windows.h>
 #include <string>
 
+// The Jolt headers don't include Jolt.h. Always include Jolt.h before including any other Jolt header.
+// You can use Jolt.h in your precompiled header to speed up compilation.
+#include <Jolt/Jolt.h>
 
-#include "../Common/2D/Vector2D.h"
+// Jolt includes
+#include <Jolt/RegisterTypes.h>
+#include <Jolt/Core/Factory.h>
+#include <Jolt/Core/TempAllocator.h>
+#include <Jolt/Core/JobSystemSingleThreaded.h>
+#include <Jolt/Physics/PhysicsSettings.h>
+#include <Jolt/Physics/PhysicsSystem.h>
+#include <Jolt/Physics/Collision/Shape/BoxShape.h>
+#include <Jolt/Physics/Collision/Shape/SphereShape.h>
+#include <Jolt/Physics/Body/BodyCreationSettings.h>
+#include <Jolt/Physics/Body/BodyActivationListener.h>
+
+// Disable common warnings triggered by Jolt, you can use JPH_SUPPRESS_WARNING_PUSH / JPH_SUPPRESS_WARNING_POP to store and restore the warning state
+JPH_SUPPRESS_WARNINGS
+
+// All Jolt symbols are in the JPH namespace
+using namespace JPH;
+
+// If you want your code to compile using single or double precision write 0.0_r to get a Real value that compiles to double or float depending if JPH_DOUBLE_PRECISION is set or not.
+using namespace JPH::literals;
 
 class PlayerBase;
 class SoccerPitch;
@@ -36,10 +58,10 @@ private:
 
   //the steering force created by the combined effect of all
   //the selected behaviors
-  Vector2D     m_vSteeringForce;
+  Vec3     m_vSteeringForce;
 
   //the current target (usually the ball or predicted ball position)
-  Vector2D     m_vTarget;
+  Vec3     m_vTarget;
 
   //the distance the player tries to interpose from the target
   double        m_dInterposeDist;
@@ -73,22 +95,22 @@ private:
 
 
   //this behavior moves the agent towards a target position
-  Vector2D Seek(Vector2D target);
+  Vec3 Seek(Vec3 target);
 
   //this behavior is similar to seek but it attempts to arrive 
   //at the target with a zero velocity
-  Vector2D Arrive(Vector2D target, Deceleration decel);
+  Vec3 Arrive(Vec3 target, Deceleration decel);
 
   //This behavior predicts where its prey will be and seeks
   //to that location
-  Vector2D Pursuit(const SoccerBall* ball);
+  Vec3 Pursuit(const SoccerBall* ball);
  
-  Vector2D Separation();
+  Vec3 Separation();
 
   //this attempts to steer the agent to a position between the opponent
   //and the object
-  Vector2D Interpose(const SoccerBall* ball,
-                     Vector2D pos,
+  Vec3 Interpose(const SoccerBall* ball,
+      Vec3 pos,
                      double    DistFromTarget);
 
 
@@ -99,12 +121,12 @@ private:
   //this function tests if a specific bit of m_iFlags is set
   bool      On(behavior_type bt){return (m_iFlags & bt) == bt;}
 
-  bool      AccumulateForce(Vector2D &sf, Vector2D ForceToAdd);
+  bool      AccumulateForce(Vec3&sf, Vec3 ForceToAdd);
 
-  Vector2D  SumForces();
+  Vec3  SumForces();
 
   //a vertex buffer to contain the feelers rqd for dribbling
-  std::vector<Vector2D> m_Antenna;
+  std::vector<Vec3> m_Antenna;
 
   
 public:
@@ -116,7 +138,7 @@ public:
   virtual ~SteeringBehaviors(){}
 
  
-  Vector2D Calculate();
+  Vec3 Calculate();
 
   //calculates the component of the steering force that is parallel
   //with the vehicle heading
@@ -126,15 +148,15 @@ public:
   //with the vehicle heading
   double    SideComponent();
 
-  Vector2D Force()const{return m_vSteeringForce;}
+  Vec3 Force()const{return m_vSteeringForce;}
 
   //renders visual aids and info for seeing how each behavior is
   //calculated
   //void      RenderInfo();
   //void      RenderAids();
 
-  Vector2D  Target()const{return m_vTarget;}
-  void      SetTarget(const Vector2D t){m_vTarget = t;}
+  Vec3  Target()const{return m_vTarget;}
+  void      SetTarget(const Vec3 t){m_vTarget = t;}
 
   double     InterposeDistance()const{return m_dInterposeDist;}
   void      SetInterposeDistance(double d){m_dInterposeDist = d;}

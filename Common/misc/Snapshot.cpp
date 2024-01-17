@@ -36,8 +36,8 @@ json Snapshot::AddSnapshot(SoccerPitch* soccer_pitch)
     json ball;
 
     ball["id"] = "0";
-    ball["p"] = { soccer_pitch->Ball()->Pos().x, soccer_pitch->Ball()->Pos().y, 0 };
-    ball["h"] = { soccer_pitch->Ball()->Heading().x, soccer_pitch->Ball()->Heading().y, 0 };
+    ball["p"] = { soccer_pitch->Ball()->Pos().GetX(), soccer_pitch->Ball()->Pos().GetZ(), 0};
+    ball["h"] = { soccer_pitch->Ball()->Heading().GetX(), soccer_pitch->Ball()->Heading().GetZ(), 0 };
     entities.push_back(ball);
 
     std::vector<PlayerBase*>::const_iterator it = soccer_pitch->HomeTeam()->Members().begin();
@@ -46,8 +46,8 @@ json Snapshot::AddSnapshot(SoccerPitch* soccer_pitch)
         json player;
 
         player["id"] = (*it)->ID();
-        player["p"] = { (*it)->Pos().x, (*it)->Pos().y, 0 };
-        player["h"] = { (*it)->Heading().x, (*it)->Heading().y, 0 };
+        player["p"] = { (*it)->Pos().GetX(), (*it)->Pos().GetZ(), 0 };
+        player["h"] = { (*it)->Heading().GetX(), (*it)->Heading().GetZ(), 0 };
         entities.push_back(player);
         
     }
@@ -58,8 +58,8 @@ json Snapshot::AddSnapshot(SoccerPitch* soccer_pitch)
         json player;
 
         player["id"] = (*it)->ID();
-        player["p"] = { (*it)->Pos().x, (*it)->Pos().y, 0 };
-        player["h"] = { (*it)->Heading().x, (*it)->Heading().y, 0 };
+        player["p"] = { (*it)->Pos().GetX(), (*it)->Pos().GetZ(), 0 };
+        player["h"] = { (*it)->Heading().GetX(), (*it)->Heading().GetZ(), 0 };
         entities.push_back(player);
 
     }
