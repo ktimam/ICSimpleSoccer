@@ -1,10 +1,52 @@
 [build-wasm]
 canister          = "SimSoccerServer"
 did_path          = "SimSoccerServer.did"
-cpp_paths         = ["SimSoccerServer.cpp","./Common/*/*.cpp", "./SimSoccer/*.cpp"]
-cpp_header_paths  = ["SimSoccerServer.h"]
-cpp_compile_flags = ["-MMD", "-MP", "-D LINUX"]
+cpp_paths         = [
+    "SimSoccerServer.cpp",
+    "./Common/*/*.cpp", 
+    "./SimSoccer/*.cpp",
+    "./3rdparty/Jolt/*.cpp",
+    "./3rdparty/Jolt/*/*.cpp",
+    "./3rdparty/Jolt/*/*/*.cpp",
+    "./3rdparty/Jolt/*/*/*/*.cpp",
+    ]
+cpp_include_dirs = [
+    "./3rdparty/Jolt/",
+    ]
+cpp_compile_flags = [
+    "-MMD", 
+    "-MP", 
+    "-D LINUX",
+    "-D JPH_PLATFORM_WASM",
+    "-D JPH_PLATFORM_SINGLE_THREAD",
+    ]
 cpp_link_flags    = []
 c_paths           = []
 c_header_paths    = []
 c_compile_flags   = []
+cpp_compile_flags_defaults = [
+    "-O3",
+    "-flto",
+    "-fno-exceptions", # required for IC
+    "-fvisibility=hidden",
+    #"-D NDEBUG",
+    "-D ICPP_VERBOSE=0",
+]
+cpp_link_flags_defaults = [
+    "-nostartfiles",
+    "-Wl,--no-entry",
+    "-Wl,--lto-O3",
+    "-Wl,--strip-all",
+    "-Wl,--strip-debug",
+    "-Wl,--stack-first",
+    "-Wl,--export-dynamic", # required for IC
+    "-Wl,-z,stack-size=1048576",
+]
+c_compile_flags_defaults = [
+    # "-O3",
+    # "-flto",
+    "-fno-exceptions", # required for IC
+    # "-fvisibility=hidden",
+    "-D NDEBUG",
+    "-D ICPP_VERBOSE=0",
+]

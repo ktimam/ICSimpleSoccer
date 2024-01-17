@@ -1,7 +1,7 @@
 {
   "version": 1,
   "canisters": {
-    "simsoccerserver": {
+    "SimSoccerServer": {
       "type": "custom",
       "candid": "build/SimSoccerServer.did",
       "wasm": "build/SimSoccerServer.wasm"
