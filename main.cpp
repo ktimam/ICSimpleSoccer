@@ -734,11 +734,13 @@ int WINAPI WinMain (HINSTANCE hInstance,
   mTickCount = 0;
 
 #ifdef CLIENT_MODE
-  std::ifstream f("match.json");// , std::ios::in | std::ios::binary | std::ios::ate);
-  json data = json::parse(f);
+  std::ifstream ifs("match.json");// , std::ios::in | std::ios::binary | std::ios::ate);
+  std::string content;// ((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
+  ifs >> content;
+  json data = json::parse(content);
   //std::vector<json>::const_iterator it = g_MatchReplay->Snapshots().begin();
-  json::const_iterator it = data.begin();
-  for (it; it != data.end(); ++it)
+  json::const_iterator it = data["scrnsnaps"].begin();
+  for (it; it != data["scrnsnaps"].end(); ++it)
 #else
   while(!bDone)
 #endif // LIVE_MODE
