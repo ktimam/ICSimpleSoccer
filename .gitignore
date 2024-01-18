@@ -371,3 +371,15 @@ FodyWeavers.xsd
 /match_clientold - Copy.json
 /match_clientold.json
 /match_client - Copy (2).json
+/canister_ids.json
+/.dfx/local/network-id
+/.dfx/ic/lsp/pcxn6-vyaaa-aaaal-ac2xq-cai.did
+/.dfx/ic/lsp/bkyz2-fmaaa-aaaaa-qaaaq-cai.did
+/.dfx/ic/lsp/5ev7o-daaaa-aaaai-acraa-cai.did
+/.dfx/ic/canisters/simsoccerserver/simsoccerserver.wasm
+/.dfx/ic/canisters/simsoccerserver/service.did.js
+/.dfx/ic/canisters/simsoccerserver/service.did.d.ts
+/.dfx/ic/canisters/simsoccerserver/service.did
+/.dfx/ic/canisters/simsoccerserver/init_args.txt
+/.dfx/ic/canisters/simsoccerserver/index.js
+/.dfx/ic/canisters/simsoccerserver/constructor.did
