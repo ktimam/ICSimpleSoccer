@@ -3,6 +3,8 @@ Backend for a soccer simulation built for ICP using ICPP. Based on code sample f
 Demo is built in C++ and uses Jolt physics Engine.
 
 ## Installation
+
+```bash
 dfx start --clean --background
 icpp build-wasm
 //Install wasm larger than 2mb
@@ -11,6 +13,7 @@ dfx canister create SimSoccerServer
 dfx canister install SimSoccerServer --wasm ./build/SimSoccerServer.wasm.gz
 //For redeploying
 dfx canister install SimSoccerServer --mode reinstall --wasm ./build/SimSoccerServer.wasm.gz
+```
 
 ### Prerequisites
 dfx
