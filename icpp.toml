@@ -5,13 +5,13 @@ cpp_paths         = [
     "SimSoccerServer.cpp",
     "./Common/*/*.cpp", 
     "./SimSoccer/*.cpp",
-    "./3rdparty/Jolt/*.cpp",
-    "./3rdparty/Jolt/*/*.cpp",
-    "./3rdparty/Jolt/*/*/*.cpp",
-    "./3rdparty/Jolt/*/*/*/*.cpp",
+    "./Jolt/*.cpp",
+    "./Jolt/*/*.cpp",
+    "./Jolt/*/*/*.cpp",
+    "./Jolt/*/*/*/*.cpp",
     ]
 cpp_include_dirs = [
-    "./3rdparty/Jolt/",
+    "./Jolt/",
     ]
 cpp_compile_flags = [
     "-MMD", 

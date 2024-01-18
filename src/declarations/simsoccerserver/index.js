@@ -1,8 +1,8 @@
 import { Actor, HttpAgent } from "@dfinity/agent";
 
 // Imports and re-exports candid interface
-import { idlFactory } from "./simsoccerserver.did.js";
-export { idlFactory } from "./simsoccerserver.did.js";
+import { idlFactory } from "./SimSoccerServer.did.js";
+export { idlFactory } from "./SimSoccerServer.did.js";
 
 /* CANISTER_ID is replaced by webpack based on node environment
  * Note: canister environment variable will be standardized as
@@ -40,4 +40,4 @@ export const createActor = (canisterId, options = {}) => {
   });
 };
 
-export const simsoccerserver = createActor(canisterId);
+export const SimSoccerServer = createActor(canisterId);
