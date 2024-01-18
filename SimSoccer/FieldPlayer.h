@@ -47,13 +47,10 @@ public:
   FieldPlayer(SoccerTeam*    home_team,
              int        home_region,
              State<FieldPlayer>* start_state,
-             Vector2D  heading,
-             Vector2D      velocity,
-             double         mass,
+             BodyInterface& bodyInterface, BodyID body_id,
              double         max_force,
              double         max_speed,
              double         max_turn_rate,
-             double         scale,
              player_role    role);   
   
   ~FieldPlayer();

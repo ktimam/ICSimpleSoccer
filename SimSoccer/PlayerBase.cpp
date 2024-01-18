@@ -30,22 +30,14 @@ PlayerBase::~PlayerBase()
 //------------------------------------------------------------------------
 PlayerBase::PlayerBase(SoccerTeam* home_team,
                        int   home_region,
-                       Vector2D  heading,
-                       Vector2D velocity,
-                       double    mass,
+                       BodyInterface& bodyInterface, BodyID body_id,
                        double    max_force,
                        double    max_speed,
                        double    max_turn_rate,
-                       double    scale,
                        player_role role):    
 
-    MovingEntity(home_team->Pitch()->GetRegionFromIndex(home_region)->Center(),
-                 scale*10.0,
-                 velocity,
+    MovingEntity(bodyInterface, body_id, 
                  max_speed,
-                 heading,
-                 mass,
-                 Vector2D(scale,scale),
                  max_turn_rate,
                  max_force),
    m_pTeam(home_team),
@@ -65,18 +57,6 @@ PlayerBase::PlayerBase(SoccerTeam* home_team,
   for (int vtx=0; vtx<NumPlayerVerts; ++vtx)
   {
     m_vecPlayerVB.push_back(player[vtx]);
-
-    //set the bounding radius to the length of the 
-    //greatest extent
-    if (abs(player[vtx].x) > m_dBoundingRadius)
-    {
-      m_dBoundingRadius = abs(player[vtx].x);
-    }
-
-    if (abs(player[vtx].y) > m_dBoundingRadius)
-    {
-      m_dBoundingRadius = abs(player[vtx].y);
-    }
   }
 
   //set up the steering behavior class
@@ -98,15 +78,6 @@ PlayerBase::PlayerBase(SoccerTeam* home_team,
 void PlayerBase::TrackBall()
 {
   RotateHeadingToFacePosition(Ball()->Pos());  
-}
-
-//----------------------------- TrackTarget --------------------------------
-//
-//  sets the player's heading to point at the current target
-//------------------------------------------------------------------------
-void PlayerBase::TrackTarget()
-{
-  SetHeading(Vec2DNormalize(Steering()->Target() - Pos()));
 }
 
 
@@ -131,9 +102,9 @@ bool  SortByReversedDistanceToOpponentsGoal(const PlayerBase*const p1,
 //
 //  returns true if subject is within field of view of this player
 //-----------------------------------------------------------------------
-bool PlayerBase::PositionInFrontOfPlayer(Vector2D position)const
+bool PlayerBase::PositionInFrontOfPlayer(Vec3 position)const
 {
-  Vector2D ToSubject = position - Pos();
+    Vec3 ToSubject = position - Pos();
 
   if (ToSubject.Dot(Heading()) > 0) 
     
@@ -161,7 +132,7 @@ bool PlayerBase::isThreatened()const
     //calculate distance to the player. if dist is less than our
     //comfort zone, and the opponent is infront of the player, return true
     if (PositionInFrontOfPlayer((*curOpp)->Pos()) &&
-       (Vec2DDistanceSq(Pos(), (*curOpp)->Pos()) < Prm.PlayerComfortZoneSq))
+       ((Pos() - (*curOpp)->Pos()).LengthSq() < Prm.PlayerComfortZoneSq))
     {        
       return true;
     }
@@ -225,12 +196,12 @@ void PlayerBase::FindSupport()const
   //calculate distance to opponent's goal. Used frequently by the passing//methods
 double PlayerBase::DistToOppGoal()const
 {
-  return fabs(Pos().x - Team()->OpponentsGoal()->Center().x);
+  return fabs(Pos().GetX() - Team()->OpponentsGoal()->Center().GetX());
 }
 
 double PlayerBase::DistToHomeGoal()const
 {
-  return fabs(Pos().x - Team()->HomeGoal()->Center().x);
+  return fabs(Pos().GetX() - Team()->HomeGoal()->Center().GetX());
 }
 
 bool PlayerBase::isControllingPlayer()const
@@ -238,17 +209,17 @@ bool PlayerBase::isControllingPlayer()const
 
 bool PlayerBase::BallWithinKeeperRange()const
 {
-  return (Vec2DDistanceSq(Pos(), Ball()->Pos()) < Prm.KeeperInBallRangeSq);
+  return ((Pos() - Ball()->Pos()).LengthSq() < Prm.KeeperInBallRangeSq);
 }
 
 bool PlayerBase::BallWithinReceivingRange()const
 {
-  return (Vec2DDistanceSq(Pos(), Ball()->Pos()) < Prm.BallWithinReceivingRangeSq);
+  return ((Pos() - Ball()->Pos()).LengthSq() < Prm.BallWithinReceivingRangeSq);
 }
 
 bool PlayerBase::BallWithinKickingRange()const
 {
-  return (Vec2DDistanceSq(Ball()->Pos(), Pos()) < Prm.PlayerKickingDistanceSq);
+  return ((Ball()->Pos() - Pos()).LengthSq() < Prm.PlayerKickingDistanceSq);
 }
 
 
@@ -266,7 +237,7 @@ bool PlayerBase::InHomeRegion()const
 
 bool PlayerBase::AtTarget()const
 {
-  return (Vec2DDistanceSq(Pos(), Steering()->Target()) < Prm.PlayerInTargetRangeSq);
+  return ((Pos() - Steering()->Target()).LengthSq() < Prm.PlayerInTargetRangeSq);
 }
 
 bool PlayerBase::isClosestTeamMemberToBall()const
@@ -282,14 +253,14 @@ bool PlayerBase::isClosestPlayerOnPitchToBall()const
 
 bool PlayerBase::InHotRegion()const
 {
-  return fabs(Pos().y - Team()->OpponentsGoal()->Center().y ) <
+  return fabs(Pos().GetZ() - Team()->OpponentsGoal()->Center().GetZ()) <
          Pitch()->PlayingArea()->Length()/3.0;
 }
 
 bool PlayerBase::isAheadOfAttacker()const
 {
-  return fabs(Pos().x - Team()->OpponentsGoal()->Center().x) <
-         fabs(Team()->ControllingPlayer()->Pos().x - Team()->OpponentsGoal()->Center().x);
+  return fabs(Pos().GetX() - Team()->OpponentsGoal()->Center().GetX()) <
+         fabs(Team()->ControllingPlayer()->Pos().GetX() - Team()->OpponentsGoal()->Center().GetX());
 }
 
 SoccerBall* const PlayerBase::Ball()const

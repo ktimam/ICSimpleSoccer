@@ -627,6 +627,25 @@ inline bool GetLineSegmentCircleClosestIntersectionPoint(Vector2D A,
   return ipFound;
 }
 
+//------------------------ Sign ------------------------------------------
+//
+//  returns positive if v2 is clockwise of this vector,
+//  minus if anticlockwise (Y axis pointing down, X axis to right)
+//------------------------------------------------------------------------
+//enum { clockwise = 1, anticlockwise = -1 };
+
+inline int Sign(const Vector2D& v1, const Vector2D& v2)
+{
+    if (v1.y * v2.x > v1.x * v2.y)
+    {
+        return anticlockwise;
+    }
+    else
+    {
+        return clockwise;
+    }
+}
+
 #endif
 
               

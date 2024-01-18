@@ -44,12 +44,12 @@ SupportSpotCalculator::SupportSpotCalculator(int           numX,
     {      
       if (m_pTeam->Color() == SoccerTeam::blue)
       {
-        m_Spots.push_back(SupportSpot(Vector2D(left+x*SliceX, top+y*SliceY), 0.0));
+        m_Spots.push_back(SupportSpot(Vec3(left+x*SliceX, 0, top+y*SliceY), 0.0));
       }
 
       else
       {
-        m_Spots.push_back(SupportSpot(Vector2D(right-x*SliceX, top+y*SliceY), 0.0));
+        m_Spots.push_back(SupportSpot(Vec3(right-x*SliceX, 0, top+y*SliceY), 0.0));
       }
     }
   }
@@ -63,7 +63,7 @@ SupportSpotCalculator::SupportSpotCalculator(int           numX,
 //
 //  see header or book for description
 //-----------------------------------------------------------------------------
-Vector2D SupportSpotCalculator::DetermineBestSupportingPosition()
+Vec3 SupportSpotCalculator::DetermineBestSupportingPosition()
 {
   //only update the spots every few frames                              
   if (/*!m_pRegulator->isReady() &&*/ m_pBestSupportingSpot)
@@ -87,8 +87,8 @@ Vector2D SupportSpotCalculator::DetermineBestSupportingPosition()
 
     //Test 1. is it possible to make a safe pass from the ball's position 
     //to this position?
-    if(m_pTeam->isPassSafeFromAllOpponents(m_pTeam->ControllingPlayer()->Pos(),
-                                           curSpot->m_vPos,
+    if(m_pTeam->isPassSafeFromAllOpponents(Vector2D(m_pTeam->ControllingPlayer()->Pos().GetX(), m_pTeam->ControllingPlayer()->Pos().GetZ()),
+                                           Vector2D(curSpot->m_vPos.GetX(), curSpot->m_vPos.GetZ()),
                                            NULL,
                                            Prm.MaxPassingForce))
     {
@@ -96,7 +96,7 @@ Vector2D SupportSpotCalculator::DetermineBestSupportingPosition()
     }
       
    
-    Vector2D shot_target;
+    Vec3 shot_target;
     //Test 2. Determine if a goal can be scored from this position.  
     if( m_pTeam->CanShoot(curSpot->m_vPos,            
                           Prm.MaxShootingForce, shot_target))
@@ -112,8 +112,8 @@ Vector2D SupportSpotCalculator::DetermineBestSupportingPosition()
     {
       const double OptimalDistance = 200.0;
         
-      double dist = Vec2DDistance(m_pTeam->ControllingPlayer()->Pos(),
-                                 curSpot->m_vPos);
+      double dist = (m_pTeam->ControllingPlayer()->Pos()-
+                                 curSpot->m_vPos).Length();
       
       double temp = fabs(OptimalDistance - dist);
 
@@ -145,7 +145,7 @@ Vector2D SupportSpotCalculator::DetermineBestSupportingPosition()
 
 //------------------------------- GetBestSupportingSpot -----------------------
 //-----------------------------------------------------------------------------
-Vector2D SupportSpotCalculator::GetBestSupportingSpot()
+Vec3 SupportSpotCalculator::GetBestSupportingSpot()
 {
   if (m_pBestSupportingSpot)
   {

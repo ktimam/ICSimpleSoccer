@@ -19,6 +19,7 @@
 
 #include "../Common/2D/Wall2D.h"
 #include "../Common/2D/Vector2D.h"
+#include "../Common/Game/PhysicsManager.h"
 #include "constants.h"
 
 class Region;
@@ -64,7 +65,9 @@ public:
   //local copy of client window dimensions
   int                  m_cxClient,
                        m_cyClient;  
-  
+
+  PhysicsManager* m_PhysicsManager;
+
   //this instantiates the regions the players utilize to  position
   //themselves
   void CreateRegions(double width, double height);

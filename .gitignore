@@ -383,3 +383,4 @@ FodyWeavers.xsd
 /.dfx/ic/canisters/simsoccerserver/init_args.txt
 /.dfx/ic/canisters/simsoccerserver/index.js
 /.dfx/ic/canisters/simsoccerserver/constructor.did
+/DebugLog.txt

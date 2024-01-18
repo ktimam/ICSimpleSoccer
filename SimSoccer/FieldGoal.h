@@ -24,21 +24,21 @@ class FieldGoal
 
 private:
 
-  Vector2D   m_vLeftPost;
-  Vector2D   m_vRightPost;
+  Vec3   m_vLeftPost;
+  Vec3   m_vRightPost;
 
   //a vector representing the facing direction of the goal
-  Vector2D   m_vFacing;
+  Vec3   m_vFacing;
 
   //the position of the center of the goal line
-  Vector2D   m_vCenter;
+  Vec3   m_vCenter;
 
   //each time Scored() detects a goal this is incremented
   int        m_iNumGoalsScored;
 
 public:
 
-  FieldGoal(Vector2D left, Vector2D right, Vector2D facing):m_vLeftPost(left),
+  FieldGoal(Vec3 left, Vec3 right, Vec3 facing):m_vLeftPost(left),
                                                        m_vRightPost(right),
                                                        m_vCenter((left+right)/2.0),
                                                        m_iNumGoalsScored(0),
@@ -51,10 +51,10 @@ public:
   inline bool Scored(const SoccerBall*const ball);
 
   //-----------------------------------------------------accessor methods
-  Vector2D Center()const{return m_vCenter;}
-  Vector2D Facing()const{return m_vFacing;}
-  Vector2D LeftPost()const{return m_vLeftPost;}
-  Vector2D RightPost()const{return m_vRightPost;}
+  Vec3 Center()const{return m_vCenter;}
+  Vec3 Facing()const{return m_vFacing;}
+  Vec3 LeftPost()const{return m_vLeftPost;}
+  Vec3 RightPost()const{return m_vRightPost;}
 
   int      NumGoalsScored()const{return m_iNumGoalsScored;}
   void     ResetGoalsScored(){m_iNumGoalsScored = 0;}
@@ -65,7 +65,8 @@ public:
 
 bool FieldGoal::Scored(const SoccerBall*const ball)
 {
-  if (LineIntersection2D(ball->Pos(), ball->OldPos(), m_vLeftPost, m_vRightPost))
+  if (LineIntersection2D(Vector2D(ball->Pos().GetX(), ball->Pos().GetZ()), Vector2D(ball->OldPos().GetX(), ball->OldPos().GetZ()),
+      Vector2D(m_vLeftPost.GetX(), m_vLeftPost.GetZ()), Vector2D(m_vRightPost.GetX(), m_vRightPost.GetZ())))
   {
     ++m_iNumGoalsScored;
 

@@ -31,22 +31,16 @@ FieldPlayer::~FieldPlayer()
 FieldPlayer::FieldPlayer(SoccerTeam* home_team,
                       int   home_region,
                       State<FieldPlayer>* start_state,
-                      Vector2D  heading,
-                      Vector2D velocity,
-                      double    mass,
+                      BodyInterface& bodyInterface, BodyID body_id,
                       double    max_force,
                       double    max_speed,
                       double    max_turn_rate,
-                      double    scale,
                       player_role role): PlayerBase(home_team,
                                                     home_region,
-                                                    heading,
-                                                    velocity,
-                                                    mass,
+                                                    bodyInterface, body_id,
                                                     max_force,
                                                     max_speed,
                                                     max_turn_rate,
-                                                    scale,
                                                     role)                                    
 {
   //set up the state machine
@@ -81,50 +75,60 @@ void FieldPlayer::Update()
 
   //if no steering force is produced decelerate the player by applying a
   //braking force
-  if (m_pSteering->Force().isZero())
+  if (m_pSteering->Force().IsNearZero())
   {
-    const double BrakingRate = 0.8; 
+      const double BrakingRate = 0.2;// 0.8;
 
-    m_vVelocity = m_vVelocity * BrakingRate;                                     
+    //m_vVelocity = m_vVelocity * BrakingRate;      
+    m_BodyInterface.SetFriction(m_EntityPhysicsID, BrakingRate);
+  }
+  else
+  {
+      m_BodyInterface.SetFriction(m_EntityPhysicsID, 0);
   }
   
   //the steering force's side component is a force that rotates the 
   //player about its axis. We must limit the rotation so that a player
   //can only turn by PlayerMaxTurnRate rads per update.
-  double TurningForce =   m_pSteering->SideComponent();
+  double TurningForce = m_pSteering->SideComponent();
 
   Clamp(TurningForce, -Prm.PlayerMaxTurnRate, Prm.PlayerMaxTurnRate);
 
   //rotate the heading vector
-  Vec2DRotateAroundOrigin(m_vHeading, TurningForce);
+  //Vec2DRotateAroundOrigin(m_vHeading, TurningForce);
+  //m_BodyInterface.SetAngularVelocity(m_EntityPhysicsID, Vec3(0, TurningForce, 0));
+  Rotate(TurningForce);
 
   //make sure the velocity vector points in the same direction as
   //the heading vector
-  m_vVelocity = m_vHeading * m_vVelocity.Length();
+  //m_vVelocity = m_vHeading * m_vVelocity.Length();
 
   //and recreate m_vSide
-  m_vSide = m_vHeading.Perp();
+  //m_vSide = m_vHeading.Perp();
 
 
   //now to calculate the acceleration due to the force exerted by
   //the forward component of the steering force in the direction
   //of the player's heading
-  Vector2D accel = m_vHeading * m_pSteering->ForwardComponent() / m_dMass;
+  //Vector2D accel = m_vHeading * m_pSteering->ForwardComponent() / Mass();
 
-  m_vVelocity += accel;
+  Vec3 Acceleration = Heading() * m_pSteering->ForwardComponent() / Mass();
+
+  //m_vVelocity += accel;
+  m_BodyInterface.AddLinearVelocity(m_EntityPhysicsID, Acceleration);
 
   //make sure player does not exceed maximum velocity
-  m_vVelocity.Truncate(m_dMaxSpeed);
+  //m_vVelocity.Truncate(m_dMaxSpeed);
+  SetVelocity(Vec3::sClamp(Velocity(), Vec3(-m_dMaxSpeed, -m_dMaxSpeed, -m_dMaxSpeed), Vec3(m_dMaxSpeed, m_dMaxSpeed, m_dMaxSpeed)));
 
   //update the position
-  m_vPosition += m_vVelocity;
-
+  //m_vPosition += m_vVelocity;
 
   //enforce a non-penetration constraint if desired
-  if(Prm.bNonPenetrationConstraint)
+  /*if(Prm.bNonPenetrationConstraint)
   {
     EnforceNonPenetrationContraint(this, AutoList<PlayerBase>::GetAllMembers());
-  }
+  }*/
 }
 
 //-------------------- HandleMessage -------------------------------------

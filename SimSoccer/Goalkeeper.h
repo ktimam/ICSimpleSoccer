@@ -28,20 +28,17 @@ private:
   //this vector is updated to point towards the ball and is used when
   //rendering the goalkeeper (instead of the underlaying vehicle's heading)
   //to ensure he always appears to be watching the ball
-  Vector2D   m_vLookAt;
+  Vec3   m_vLookAt;
 
 public:
   
    GoalKeeper(SoccerTeam*        home_team,
               int                home_region,
               State<GoalKeeper>* start_state,
-              Vector2D           heading,
-              Vector2D           velocity,
-              double              mass,
+              BodyInterface& bodyInterface, BodyID body_id,
               double              max_force,
               double              max_speed,
-              double              max_turn_rate,
-              double              scale);
+              double              max_turn_rate);
 
    ~GoalKeeper(){delete m_pStateMachine;}
 
@@ -65,14 +62,14 @@ public:
    //is flexible and can move depending on where the ball is on the field.
    //To achieve this we just scale the ball's y value by the ratio of the
    //goal width to playingfield width
-   Vector2D    GetRearInterposeTarget()const;
+   Vec3    GetRearInterposeTarget()const;
 
    StateMachine<GoalKeeper>* GetFSM()const{return m_pStateMachine;}
    std::string GetCurrentStateName()const { return std::string(m_pStateMachine->GetNameOfCurrentState()); }
 
    
-   Vector2D    LookAt()const{return m_vLookAt;}
-   void        SetLookAt(Vector2D v){m_vLookAt=v;}
+   Vec3    LookAt()const{return m_vLookAt;}
+   void        SetLookAt(Vec3 v){m_vLookAt=v;}
 };
 
 

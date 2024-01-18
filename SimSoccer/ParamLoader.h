@@ -55,11 +55,11 @@ private:
         PlayerKickFrequency = 8;//GetNextParameterDouble();
 
 
-        PlayerMass = 3;//GetNextParameterDouble(); 
-        PlayerMaxForce = 1;//GetNextParameterDouble();    
-        PlayerMaxSpeedWithBall = 1.2;// 3700;//GetNextParameterDouble();   
-        PlayerMaxSpeedWithoutBall = 1.6;// 4000;//GetNextParameterDouble();   
-        PlayerMaxTurnRate = 0.4;//GetNextParameterDouble(); 
+        PlayerMass = 15;// 3;//GetNextParameterDouble(); 
+        PlayerMaxForce = 10;// 1;//GetNextParameterDouble();    
+        PlayerMaxSpeedWithBall = 70;// 1.2;// 3700;//GetNextParameterDouble();   
+        PlayerMaxSpeedWithoutBall = 100;// 1.6;// 4000;//GetNextParameterDouble();   
+        PlayerMaxTurnRate = 0.05;// 0.4;//GetNextParameterDouble(); 
         PlayerScale = 1;//GetNextParameterDouble();      
         PlayerComfortZone = 60;//GetNextParameterDouble();  
         PlayerKickingAccuracy = 0.99;//GetNextParameterDouble();
@@ -68,9 +68,9 @@ private:
 
 
 
-        MaxDribbleForce = 1.5;//GetNextParameterDouble(); 
-        MaxShootingForce = 6;//GetNextParameterDouble();    
-        MaxPassingForce = 3;//GetNextParameterDouble();  
+        MaxDribbleForce = 75;// 1.5;//GetNextParameterDouble(); 
+        MaxShootingForce = 300;// 6;//GetNextParameterDouble();    
+        MaxPassingForce = 150;// 3;//GetNextParameterDouble();  
 
         WithinRangeOfHome = 15;//GetNextParameterDouble();    
         WithinRangeOfSupportSpot = 15;//GetNextParameterDouble();    
@@ -84,9 +84,9 @@ private:
 
         bStates = 1;//GetNextParameterBool();    
         bIDs = 1;//GetNextParameterBool(); 
-        bSupportSpots = 1;//GetNextParameterBool();     
+        bSupportSpots = 0;//GetNextParameterBool();     
         bRegions = 0;//GetNextParameterBool();
-        bShowControllingTeam = 1;//GetNextParameterBool();
+        bShowControllingTeam = 0;//GetNextParameterBool();
         bViewTargets = 0;//GetNextParameterBool();
         bHighlightIfThreatened = 0;//GetNextParameterBool();
 

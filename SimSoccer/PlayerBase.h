@@ -69,13 +69,10 @@ public:
 
   PlayerBase(SoccerTeam*    home_team,
              int            home_region,
-             Vector2D       heading,
-             Vector2D       velocity,
-             double          mass,
+             BodyInterface& bodyInterface, BodyID body_id,
              double          max_force,
              double          max_speed,
              double          max_turn_rate,
-             double          scale,
              player_role    role);
 
   virtual ~PlayerBase();
@@ -87,7 +84,6 @@ public:
 
   //rotates the player to face the ball or the player's current target
   void        TrackBall();
-  void        TrackTarget();
 
   //this messages the player that is closest to the supporting spot to
   //change state to support the attacking player
@@ -121,7 +117,7 @@ public:
 
   //returns true if the point specified by 'position' is located in
   //front of the player
-  bool        PositionInFrontOfPlayer(Vector2D position)const;
+  bool        PositionInFrontOfPlayer(Vec3 position)const;
 
   //returns true if the player is the closest player on the pitch to the ball
   bool        isClosestPlayerOnPitchToBall()const;

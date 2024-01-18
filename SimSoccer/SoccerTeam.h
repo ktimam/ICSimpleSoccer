@@ -17,6 +17,7 @@
 
 #include <vector>
 
+#include "../Common/2D/Vector2D.h"
 #include "../Common/Game/Region.h"
 #include "SupportSpotCalculator.h"
 #include "../Common/FSM/StateMachine.h"
@@ -101,9 +102,9 @@ public:
   //returns true if player has a clean shot at the goal and sets ShotTarget
   //to a normalized vector pointing in the direction the shot should be
   //made. Else returns false and sets heading to a zero vector
-  bool        CanShoot(Vector2D  BallPos,
+  bool        CanShoot(Vec3  BallPos,
                        double     power, 
-                       Vector2D& ShotTarget)const;
+                       Vec3& ShotTarget)const;
 
   //The best pass is considered to be the pass that cannot be intercepted 
   //by an opponent and that is as far forward of the receiver as possible  
@@ -112,7 +113,7 @@ public:
   //returned in the  reference 'PassTarget'
   bool        FindPass(const PlayerBase*const passer,
                       PlayerBase*&           receiver,
-                      Vector2D&              PassTarget,
+                      Vec3&              PassTarget,
                       double                  power,
                       double                  MinPassingDistance)const;
 
@@ -126,7 +127,7 @@ public:
   //opponent's goal area.
   bool        GetBestPassToReceiver(const PlayerBase* const passer,
                                     const PlayerBase* const receiver,
-                                    Vector2D& PassTarget,
+                                    Vec3& PassTarget,
                                     const double power)const;
 
   //test if a pass from positions 'from' to 'target' kicked with force 
@@ -146,7 +147,7 @@ public:
                                          double     PassingForce)const;
 
   //returns true if there is an opponent within radius of position
-  bool        isOpponentWithinRadius(Vector2D pos, double rad);
+  bool        isOpponentWithinRadius(Vec3 pos, double rad);
 
   //this tests to see if a pass is possible between the requester and
   //the controlling player. If it is possible a message is sent to the
@@ -177,7 +178,7 @@ public:
   
   double               ClosestDistToBallSq()const{return m_dDistSqToBallOfClosestPlayer;}
 
-  Vector2D             GetSupportSpot()const{return m_pSupportSpotCalc->GetBestSupportingSpot();}
+  Vec3             GetSupportSpot()const{return m_pSupportSpotCalc->GetBestSupportingSpot();}
   SupportSpotCalculator* GetSupportSpotCalculator()const { return m_pSupportSpotCalc; }
 
   PlayerBase*          SupportingPlayer()const{return m_pSupportingPlayer;}
@@ -196,7 +197,7 @@ public:
   }
 
 
-  bool  InControl()const{if(m_pControllingPlayer)return true; else return false;}
+  bool  InControl()const{if(m_pControllingPlayer != NULL)return true; else return false;}
   void  LostControl(){m_pControllingPlayer = NULL;}
 
   PlayerBase*  GetPlayerFromID(int id)const;

@@ -29,16 +29,17 @@ using namespace WinHttpWrapper;
 using namespace std;
 using json = nlohmann::json;
 
+#define PLAYER_STATE_INFO_ON
 
 //#define SERVER_MODE
 //#define CLIENT_MODE
 #define LIVE_MODE
-//#define CARTESI_MODE
+//#define REMOTE_MODE
 //--------------------------------- Globals ------------------------------
 //
 //------------------------------------------------------------------------
 
-const int MATCH_DURATION = 10;
+const int MATCH_DURATION = 45;
 const int MATCH_RATE = 6;
 
 const int MILLI_IN_SECOND = 20;
@@ -55,9 +56,9 @@ bool mMatchFinished = false;
 const char* g_szApplicationName = "Simple Soccer";
 const char*	g_szWindowClassName = "MyWindowClass";
 
-const wstring CARTESI_API_SERVER_URL = L"localhost";
-int CARTESI_API_SERVER_PORT = 3010;
-bool CARTESI_API_SERVER_HTTPS = false;
+const wstring REMOTE_API_SERVER_URL = L"localhost";
+int REMOTE_API_SERVER_PORT = 3010;
+bool REMOTE_API_SERVER_HTTPS = false;
 const wstring requestHeader = L"Content-Type: application/json";
 
 SoccerPitch* g_SoccerPitch;
@@ -127,7 +128,7 @@ bool RenderSoccerPitch()
             gdi->Rect(g_SoccerPitch->Regions()[r]->Left(), g_SoccerPitch->Regions()[r]->Top(), g_SoccerPitch->Regions()[r]->Right(), g_SoccerPitch->Regions()[r]->Bottom());
             
             gdi->TextColor(Cgdi::green);
-            gdi->TextAtPos(g_SoccerPitch->Regions()[r]->Center(), ttos(g_SoccerPitch->Regions()[r]->ID()));
+            gdi->TextAtPos(Vector2D(g_SoccerPitch->Regions()[r]->Center().GetX(), g_SoccerPitch->Regions()[r]->Center().GetZ()), ttos(g_SoccerPitch->Regions()[r]->ID()));
         }
     }
 
@@ -141,10 +142,10 @@ bool RenderSoccerPitch()
 
     //render the pitch markings
     gdi->WhitePen();
-    gdi->Circle(g_SoccerPitch->PlayingArea()->Center(), g_SoccerPitch->PlayingArea()->Width() * 0.125);
-    gdi->Line(g_SoccerPitch->PlayingArea()->Center().x, g_SoccerPitch->PlayingArea()->Top(), g_SoccerPitch->PlayingArea()->Center().x, g_SoccerPitch->PlayingArea()->Bottom());
+    gdi->Circle(Vector2D(g_SoccerPitch->PlayingArea()->Center().GetX(), g_SoccerPitch->PlayingArea()->Center().GetZ()), g_SoccerPitch->PlayingArea()->Width() * 0.125);
+    gdi->Line(g_SoccerPitch->PlayingArea()->Center().GetX(), g_SoccerPitch->PlayingArea()->Top(), g_SoccerPitch->PlayingArea()->Center().GetX(), g_SoccerPitch->PlayingArea()->Bottom());
     gdi->WhiteBrush();
-    gdi->Circle(g_SoccerPitch->PlayingArea()->Center(), 2.0);
+    gdi->Circle(Vector2D(g_SoccerPitch->PlayingArea()->Center().GetX(), g_SoccerPitch->PlayingArea()->Center().GetZ()), 2.0);
 
 
     //the ball
@@ -161,7 +162,7 @@ bool RenderSoccerPitch()
         json entity_position_x = entity_position_json.value();
         json entity_position_y = (++entity_position_json).value();
         Vector2D entity_position = Vector2D(entity_position_x, entity_position_y);
-        gdi->Circle(entity_position, g_SoccerPitch->Ball()->BRadius());
+        gdi->Circle(entity_position, Prm.BallSize);
 
         //Render the teams
         /*m_pRedTeam->Render();
@@ -229,9 +230,18 @@ bool RenderSoccerPitch()
             if (Prm.bViewTargets)
             {
                 gdi->RedBrush();
-                gdi->Circle(player->Steering()->Target(), 3);
-                gdi->TextAtPos(player->Steering()->Target(), ttos(player->ID()));
+                gdi->Circle(Vector2D(player->Steering()->Target().GetX(), player->Steering()->Target().GetZ()), 3);
+                gdi->TextAtPos(Vector2D(player->Steering()->Target().GetX(), player->Steering()->Target().GetZ()), ttos(player->ID()));
             }
+            //gdi->WhitePen();
+            //gdi->Line(entity_position.x, entity_position.y, player->Steering()->Target().GetX(), player->Steering()->Target().GetZ());
+
+
+            gdi->ThickBluePen();
+            double forwardforce = player->Steering()->ForwardComponent()*10;
+            Vec3 force = player->Heading() * forwardforce;
+            force = force + player->Pos();
+            gdi->Line(entity_position.x, entity_position.y, force.GetX(), force.GetZ());
 #endif
         }
     }
@@ -272,13 +282,13 @@ bool RenderSoccerPitch()
         const std::vector<SupportSpotCalculator::SupportSpot>& SupportSpots = ssc->SupportSpots();
         for (unsigned int spt = 0; spt < SupportSpots.size(); ++spt)
         {
-            gdi->Circle(SupportSpots[spt].m_vPos, SupportSpots[spt].m_dScore);
+            gdi->Circle(Vector2D(SupportSpots[spt].m_vPos.GetX(), SupportSpots[spt].m_vPos.GetZ()), SupportSpots[spt].m_dScore);
         }
 
         if (ssc->BestSupportingSpot())
         {
             gdi->GreenPen();
-            gdi->Circle(ssc->BestSupportingSpot()->m_vPos, ssc->BestSupportingSpot()->m_dScore);
+            gdi->Circle(Vector2D(ssc->BestSupportingSpot()->m_vPos.GetX(), ssc->BestSupportingSpot()->m_vPos.GetZ()), ssc->BestSupportingSpot()->m_dScore);
         }
     }
 #endif
@@ -330,11 +340,11 @@ LRESULT CALLBACK WindowProc (HWND   hwnd,
 			   cxClient = rect.right;
 			   cyClient = rect.bottom;
 
-#ifdef CARTESI_MODE
-               HttpRequest req(CARTESI_API_SERVER_URL, CARTESI_API_SERVER_PORT, CARTESI_API_SERVER_HTTPS);
+#ifdef REMOTE_MODE
+               HttpRequest req(REMOTE_API_SERVER_URL, REMOTE_API_SERVER_PORT, REMOTE_API_SERVER_HTTPS);
                HttpResponse response;
 
-               cout << "Action: Cartesi api server - input" << endl;
+               cout << "Action: REMOTE api server - input" << endl;
                req.Post(L"/api/input",
                    requestHeader,
                    R"({"payload":"hello"})",
@@ -352,7 +362,7 @@ LRESULT CALLBACK WindowProc (HWND   hwnd,
                //wcout << endl << response.header << endl;
                response.Reset();
 
-               cout << "Action: Cartesi api server - notice" << endl;
+               cout << "Action: REMOTE api server - notice" << endl;
                req.Post(L"/api/notice_list",
                    requestHeader,
                    query_text,
@@ -724,11 +734,13 @@ int WINAPI WinMain (HINSTANCE hInstance,
   mTickCount = 0;
 
 #ifdef CLIENT_MODE
-  std::ifstream f("match.json");// , std::ios::in | std::ios::binary | std::ios::ate);
-  json data = json::parse(f);
+  std::ifstream ifs("match.json");// , std::ios::in | std::ios::binary | std::ios::ate);
+  std::string content;// ((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
+  ifs >> content;
+  json data = json::parse(content);
   //std::vector<json>::const_iterator it = g_MatchReplay->Snapshots().begin();
-  json::const_iterator it = data.begin();
-  for (it; it != data.end(); ++it)
+  json::const_iterator it = data["scrnsnaps"].begin();
+  for (it; it != data["scrnsnaps"].end(); ++it)
 #else
   while(!bDone)
 #endif // LIVE_MODE
@@ -759,7 +771,10 @@ int WINAPI WinMain (HINSTANCE hInstance,
 #else
       if (!mMatchFinished)
       {
-          IncrementTime(1);
+          if (g_SoccerPitch->GameOn())
+          {
+            IncrementTime(1);
+          }
           g_SoccerPitch->Update();
           if (LOG_MATCH_OUTPUT)
           {
