@@ -54,6 +54,7 @@ SoccerPitch::SoccerPitch(int cx, int cy):m_cxClient(cx),
   bcs.mMassPropertiesOverride.mMass = Prm.BallMass;
   //bcs.mFriction = 0.5;
   bcs.mLinearDamping = 0.15;
+  bcs.mRestitution = 0.6f;
   BodyID ball_id = m_PhysicsManager->GetBodyInterface().CreateAndAddBody(bcs, EActivation::Activate);
   m_pBall = new SoccerBall(m_PhysicsManager->GetBodyInterface(), ball_id,
       m_vecWalls);
