@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|Win32">
-      <Configuration>Debug</Configuration>
+    <ProjectConfiguration Include="Debug3D|Win32">
+      <Configuration>Debug3D</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug3D|x64">
+      <Configuration>Debug3D</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug2D|Win32">
+      <Configuration>Debug2D</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
+    <ProjectConfiguration Include="Debug2D|x64">
+      <Configuration>Debug2D</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|x64">
@@ -171,6 +179,7 @@
     <ClCompile Include="Jolt\TriangleSplitter\TriangleSplitterLongestAxis.cpp" />
     <ClCompile Include="Jolt\TriangleSplitter\TriangleSplitterMean.cpp" />
     <ClCompile Include="Jolt\TriangleSplitter\TriangleSplitterMorton.cpp" />
+    <ClCompile Include="SamplesApp.cpp" />
     <ClCompile Include="SimSoccer\FieldGoal.cpp" />
     <ClCompile Include="SimSoccer\FieldPlayer.cpp" />
     <ClCompile Include="SimSoccer\FieldPlayerStates.cpp" />
@@ -187,6 +196,165 @@
     <ClCompile Include="SimSoccer\SupportSpotCalculator.cpp" />
     <ClCompile Include="SimSoccer\TeamStates.cpp" />
     <ClCompile Include="Common\misc\Snapshot.cpp" />
+    <ClCompile Include="TestFramework\Application\Application.cpp" />
+    <ClCompile Include="TestFramework\Application\DebugUI.cpp" />
+    <ClCompile Include="TestFramework\Image\BlitSurface.cpp" />
+    <ClCompile Include="TestFramework\Image\LoadBMP.cpp" />
+    <ClCompile Include="TestFramework\Image\LoadTGA.cpp" />
+    <ClCompile Include="TestFramework\Image\Surface.cpp" />
+    <ClCompile Include="TestFramework\Image\ZoomImage.cpp" />
+    <ClCompile Include="TestFramework\Input\Keyboard.cpp" />
+    <ClCompile Include="TestFramework\Input\Mouse.cpp" />
+    <ClCompile Include="TestFramework\Math\Perlin.cpp" />
+    <ClCompile Include="TestFramework\Renderer\ConstantBuffer.cpp" />
+    <ClCompile Include="TestFramework\Renderer\DebugRendererImp.cpp" />
+    <ClCompile Include="TestFramework\Renderer\FatalErrorIfFailed.cpp" />
+    <ClCompile Include="TestFramework\Renderer\Font.cpp" />
+    <ClCompile Include="TestFramework\Renderer\PipelineState.cpp" />
+    <ClCompile Include="TestFramework\Renderer\Renderer.cpp" />
+    <ClCompile Include="TestFramework\Renderer\RenderInstances.cpp" />
+    <ClCompile Include="TestFramework\Renderer\RenderPrimitive.cpp" />
+    <ClCompile Include="TestFramework\Renderer\Texture.cpp" />
+    <ClCompile Include="TestFramework\UI\UIAnimation.cpp" />
+    <ClCompile Include="TestFramework\UI\UIAnimationSlide.cpp" />
+    <ClCompile Include="TestFramework\UI\UIButton.cpp" />
+    <ClCompile Include="TestFramework\UI\UICheckBox.cpp" />
+    <ClCompile Include="TestFramework\UI\UIComboBox.cpp" />
+    <ClCompile Include="TestFramework\UI\UIElement.cpp" />
+    <ClCompile Include="TestFramework\UI\UIHorizontalStack.cpp" />
+    <ClCompile Include="TestFramework\UI\UIImage.cpp" />
+    <ClCompile Include="TestFramework\UI\UIManager.cpp" />
+    <ClCompile Include="TestFramework\UI\UISlider.cpp" />
+    <ClCompile Include="TestFramework\UI\UIStaticText.cpp" />
+    <ClCompile Include="TestFramework\UI\UITextButton.cpp" />
+    <ClCompile Include="TestFramework\UI\UIVerticalStack.cpp" />
+    <ClCompile Include="TestFramework\Utils\CustomMemoryHook.cpp" />
+    <ClCompile Include="TestFramework\Utils\Log.cpp" />
+    <ClCompile Include="TestFramework\Utils\ReadData.cpp" />
+    <ClCompile Include="Tests\BroadPhase\BroadPhaseCastRayTest.cpp" />
+    <ClCompile Include="Tests\BroadPhase\BroadPhaseInsertionTest.cpp" />
+    <ClCompile Include="Tests\BroadPhase\BroadPhaseTest.cpp" />
+    <ClCompile Include="Tests\Character\CharacterBaseTest.cpp" />
+    <ClCompile Include="Tests\Character\CharacterSpaceShipTest.cpp" />
+    <ClCompile Include="Tests\Character\CharacterTest.cpp" />
+    <ClCompile Include="Tests\Character\CharacterVirtualTest.cpp" />
+    <ClCompile Include="Tests\Constraints\ConeConstraintTest.cpp" />
+    <ClCompile Include="Tests\Constraints\ConstraintPriorityTest.cpp" />
+    <ClCompile Include="Tests\Constraints\ConstraintSingularityTest.cpp" />
+    <ClCompile Include="Tests\Constraints\ConstraintVsCOMChangeTest.cpp" />
+    <ClCompile Include="Tests\Constraints\DistanceConstraintTest.cpp" />
+    <ClCompile Include="Tests\Constraints\FixedConstraintTest.cpp" />
+    <ClCompile Include="Tests\Constraints\GearConstraintTest.cpp" />
+    <ClCompile Include="Tests\Constraints\HingeConstraintTest.cpp" />
+    <ClCompile Include="Tests\Constraints\PathConstraintTest.cpp" />
+    <ClCompile Include="Tests\Constraints\PointConstraintTest.cpp" />
+    <ClCompile Include="Tests\Constraints\PoweredHingeConstraintTest.cpp" />
+    <ClCompile Include="Tests\Constraints\PoweredSliderConstraintTest.cpp" />
+    <ClCompile Include="Tests\Constraints\PoweredSwingTwistConstraintTest.cpp" />
+    <ClCompile Include="Tests\Constraints\PulleyConstraintTest.cpp" />
+    <ClCompile Include="Tests\Constraints\RackAndPinionConstraintTest.cpp" />
+    <ClCompile Include="Tests\Constraints\SixDOFConstraintTest.cpp" />
+    <ClCompile Include="Tests\Constraints\SliderConstraintTest.cpp" />
+    <ClCompile Include="Tests\Constraints\SpringTest.cpp" />
+    <ClCompile Include="Tests\Constraints\SwingTwistConstraintFrictionTest.cpp" />
+    <ClCompile Include="Tests\Constraints\SwingTwistConstraintTest.cpp" />
+    <ClCompile Include="Tests\ConvexCollision\CapsuleVsBoxTest.cpp" />
+    <ClCompile Include="Tests\ConvexCollision\ClosestPointTest.cpp" />
+    <ClCompile Include="Tests\ConvexCollision\ConvexHullShrinkTest.cpp" />
+    <ClCompile Include="Tests\ConvexCollision\ConvexHullTest.cpp" />
+    <ClCompile Include="Tests\ConvexCollision\EPATest.cpp" />
+    <ClCompile Include="Tests\ConvexCollision\InteractivePairsTest.cpp" />
+    <ClCompile Include="Tests\ConvexCollision\RandomRayTest.cpp" />
+    <ClCompile Include="Tests\General\ActivateDuringUpdateTest.cpp" />
+    <ClCompile Include="Tests\General\ActiveEdgesTest.cpp" />
+    <ClCompile Include="Tests\General\AllowedDOFsTest.cpp" />
+    <ClCompile Include="Tests\General\BigVsSmallTest.cpp" />
+    <ClCompile Include="Tests\General\CenterOfMassTest.cpp" />
+    <ClCompile Include="Tests\General\ChangeMotionQualityTest.cpp" />
+    <ClCompile Include="Tests\General\ChangeMotionTypeTest.cpp" />
+    <ClCompile Include="Tests\General\ChangeObjectLayerTest.cpp" />
+    <ClCompile Include="Tests\General\ChangeShapeTest.cpp" />
+    <ClCompile Include="Tests\General\ContactListenerTest.cpp" />
+    <ClCompile Include="Tests\General\ContactManifoldTest.cpp" />
+    <ClCompile Include="Tests\General\ConveyorBeltTest.cpp" />
+    <ClCompile Include="Tests\General\DampingTest.cpp" />
+    <ClCompile Include="Tests\General\DynamicMeshTest.cpp" />
+    <ClCompile Include="Tests\General\FrictionPerTriangleTest.cpp" />
+    <ClCompile Include="Tests\General\FrictionTest.cpp" />
+    <ClCompile Include="Tests\General\FunnelTest.cpp" />
+    <ClCompile Include="Tests\General\GravityFactorTest.cpp" />
+    <ClCompile Include="Tests\General\HeavyOnLightTest.cpp" />
+    <ClCompile Include="Tests\General\HighSpeedTest.cpp" />
+    <ClCompile Include="Tests\General\IslandTest.cpp" />
+    <ClCompile Include="Tests\General\KinematicTest.cpp" />
+    <ClCompile Include="Tests\General\LoadSaveBinaryTest.cpp" />
+    <ClCompile Include="Tests\General\LoadSaveSceneTest.cpp" />
+    <ClCompile Include="Tests\General\ManifoldReductionTest.cpp" />
+    <ClCompile Include="Tests\General\ModifyMassTest.cpp" />
+    <ClCompile Include="Tests\General\MultithreadedTest.cpp" />
+    <ClCompile Include="Tests\General\PyramidTest.cpp" />
+    <ClCompile Include="Tests\General\RestitutionTest.cpp" />
+    <ClCompile Include="Tests\General\SensorTest.cpp" />
+    <ClCompile Include="Tests\General\ShapeFilterTest.cpp" />
+    <ClCompile Include="Tests\General\SimpleTest.cpp" />
+    <ClCompile Include="Tests\General\StackTest.cpp" />
+    <ClCompile Include="Tests\General\TwoDFunnelTest.cpp" />
+    <ClCompile Include="Tests\General\WallTest.cpp" />
+    <ClCompile Include="Tests\Rig\BigWorldTest.cpp" />
+    <ClCompile Include="Tests\Rig\CreateRigTest.cpp" />
+    <ClCompile Include="Tests\Rig\KinematicRigTest.cpp" />
+    <ClCompile Include="Tests\Rig\LoadRigTest.cpp" />
+    <ClCompile Include="Tests\Rig\LoadSaveBinaryRigTest.cpp" />
+    <ClCompile Include="Tests\Rig\LoadSaveRigTest.cpp" />
+    <ClCompile Include="Tests\Rig\PoweredRigTest.cpp" />
+    <ClCompile Include="Tests\Rig\RigPileTest.cpp" />
+    <ClCompile Include="Tests\Rig\SkeletonMapperTest.cpp" />
+    <ClCompile Include="Tests\ScaledShapes\ScaledBoxShapeTest.cpp" />
+    <ClCompile Include="Tests\ScaledShapes\ScaledCapsuleShapeTest.cpp" />
+    <ClCompile Include="Tests\ScaledShapes\ScaledConvexHullShapeTest.cpp" />
+    <ClCompile Include="Tests\ScaledShapes\ScaledCylinderShapeTest.cpp" />
+    <ClCompile Include="Tests\ScaledShapes\ScaledHeightFieldShapeTest.cpp" />
+    <ClCompile Include="Tests\ScaledShapes\ScaledMeshShapeTest.cpp" />
+    <ClCompile Include="Tests\ScaledShapes\ScaledMutableCompoundShapeTest.cpp" />
+    <ClCompile Include="Tests\ScaledShapes\ScaledOffsetCenterOfMassShapeTest.cpp" />
+    <ClCompile Include="Tests\ScaledShapes\ScaledSphereShapeTest.cpp" />
+    <ClCompile Include="Tests\ScaledShapes\ScaledStaticCompoundShapeTest.cpp" />
+    <ClCompile Include="Tests\ScaledShapes\ScaledTaperedCapsuleShapeTest.cpp" />
+    <ClCompile Include="Tests\ScaledShapes\ScaledTriangleShapeTest.cpp" />
+    <ClCompile Include="Tests\Shapes\BoxShapeTest.cpp" />
+    <ClCompile Include="Tests\Shapes\CapsuleShapeTest.cpp" />
+    <ClCompile Include="Tests\Shapes\ConvexHullShapeTest.cpp" />
+    <ClCompile Include="Tests\Shapes\CylinderShapeTest.cpp" />
+    <ClCompile Include="Tests\Shapes\DeformedHeightFieldShapeTest.cpp" />
+    <ClCompile Include="Tests\Shapes\HeightFieldShapeTest.cpp" />
+    <ClCompile Include="Tests\Shapes\MeshShapeTest.cpp" />
+    <ClCompile Include="Tests\Shapes\MutableCompoundShapeTest.cpp" />
+    <ClCompile Include="Tests\Shapes\OffsetCenterOfMassShapeTest.cpp" />
+    <ClCompile Include="Tests\Shapes\RotatedTranslatedShapeTest.cpp" />
+    <ClCompile Include="Tests\Shapes\SphereShapeTest.cpp" />
+    <ClCompile Include="Tests\Shapes\StaticCompoundShapeTest.cpp" />
+    <ClCompile Include="Tests\Shapes\TaperedCapsuleShapeTest.cpp" />
+    <ClCompile Include="Tests\Shapes\TriangleShapeTest.cpp" />
+    <ClCompile Include="Tests\SoftBody\SoftBodyFrictionTest.cpp" />
+    <ClCompile Include="Tests\SoftBody\SoftBodyGravityFactorTest.cpp" />
+    <ClCompile Include="Tests\SoftBody\SoftBodyKinematicTest.cpp" />
+    <ClCompile Include="Tests\SoftBody\SoftBodyPressureTest.cpp" />
+    <ClCompile Include="Tests\SoftBody\SoftBodyRestitutionTest.cpp" />
+    <ClCompile Include="Tests\SoftBody\SoftBodyShapesTest.cpp" />
+    <ClCompile Include="Tests\SoftBody\SoftBodyStressTest.cpp" />
+    <ClCompile Include="Tests\SoftBody\SoftBodyUpdatePositionTest.cpp" />
+    <ClCompile Include="Tests\Test.cpp" />
+    <ClCompile Include="Tests\Tools\LoadSnapshotTest.cpp" />
+    <ClCompile Include="Tests\Vehicle\MotorcycleTest.cpp" />
+    <ClCompile Include="Tests\Vehicle\TankTest.cpp" />
+    <ClCompile Include="Tests\Vehicle\VehicleConstraintTest.cpp" />
+    <ClCompile Include="Tests\Vehicle\VehicleSixDOFTest.cpp" />
+    <ClCompile Include="Tests\Vehicle\VehicleTest.cpp" />
+    <ClCompile Include="Tests\Water\WaterShapeTest.cpp" />
+    <ClCompile Include="Utils\ContactListenerImpl.cpp" />
+    <ClCompile Include="Utils\RagdollLoader.cpp" />
+    <ClCompile Include="Utils\ShapeCreator.cpp" />
+    <ClCompile Include="Utils\SoftBodyCreator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\2D\C2DMatrix.h" />
@@ -506,6 +674,8 @@
     <ClInclude Include="Jolt\TriangleSplitter\TriangleSplitterLongestAxis.h" />
     <ClInclude Include="Jolt\TriangleSplitter\TriangleSplitterMean.h" />
     <ClInclude Include="Jolt\TriangleSplitter\TriangleSplitterMorton.h" />
+    <ClInclude Include="Layers.h" />
+    <ClInclude Include="SamplesApp.h" />
     <ClInclude Include="SimSoccer\constants.h" />
     <ClInclude Include="SimSoccer\FieldGoal.h" />
     <ClInclude Include="SimSoccer\FieldPlayer.h" />
@@ -523,6 +693,173 @@
     <ClInclude Include="SimSoccer\SupportSpotCalculator.h" />
     <ClInclude Include="SimSoccer\TeamStates.h" />
     <ClInclude Include="Common\misc\Snapshot.h" />
+    <ClInclude Include="TestFramework\Application\Application.h" />
+    <ClInclude Include="TestFramework\Application\DebugUI.h" />
+    <ClInclude Include="TestFramework\Application\EntryPoint.h" />
+    <ClInclude Include="TestFramework\Image\BlitSurface.h" />
+    <ClInclude Include="TestFramework\Image\LoadBMP.h" />
+    <ClInclude Include="TestFramework\Image\LoadTGA.h" />
+    <ClInclude Include="TestFramework\Image\Surface.h" />
+    <ClInclude Include="TestFramework\Image\ZoomImage.h" />
+    <ClInclude Include="TestFramework\Input\Keyboard.h" />
+    <ClInclude Include="TestFramework\Input\Mouse.h" />
+    <ClInclude Include="TestFramework\Math\Perlin.h" />
+    <ClInclude Include="TestFramework\Renderer\CommandQueue.h" />
+    <ClInclude Include="TestFramework\Renderer\ConstantBuffer.h" />
+    <ClInclude Include="TestFramework\Renderer\DebugRendererImp.h" />
+    <ClInclude Include="TestFramework\Renderer\DescriptorHeap.h" />
+    <ClInclude Include="TestFramework\Renderer\FatalErrorIfFailed.h" />
+    <ClInclude Include="TestFramework\Renderer\Font.h" />
+    <ClInclude Include="TestFramework\Renderer\Frustum.h" />
+    <ClInclude Include="TestFramework\Renderer\PipelineState.h" />
+    <ClInclude Include="TestFramework\Renderer\Renderer.h" />
+    <ClInclude Include="TestFramework\Renderer\RenderInstances.h" />
+    <ClInclude Include="TestFramework\Renderer\RenderPrimitive.h" />
+    <ClInclude Include="TestFramework\Renderer\Texture.h" />
+    <ClInclude Include="TestFramework\TestFramework.h" />
+    <ClInclude Include="TestFramework\UI\UIAnimation.h" />
+    <ClInclude Include="TestFramework\UI\UIAnimationSlide.h" />
+    <ClInclude Include="TestFramework\UI\UIButton.h" />
+    <ClInclude Include="TestFramework\UI\UICheckBox.h" />
+    <ClInclude Include="TestFramework\UI\UIComboBox.h" />
+    <ClInclude Include="TestFramework\UI\UIElement.h" />
+    <ClInclude Include="TestFramework\UI\UIEventListener.h" />
+    <ClInclude Include="TestFramework\UI\UIHorizontalStack.h" />
+    <ClInclude Include="TestFramework\UI\UIImage.h" />
+    <ClInclude Include="TestFramework\UI\UIManager.h" />
+    <ClInclude Include="TestFramework\UI\UISlider.h" />
+    <ClInclude Include="TestFramework\UI\UIStaticText.h" />
+    <ClInclude Include="TestFramework\UI\UITextButton.h" />
+    <ClInclude Include="TestFramework\UI\UITexturedQuad.h" />
+    <ClInclude Include="TestFramework\UI\UIVerticalStack.h" />
+    <ClInclude Include="TestFramework\Utils\CustomMemoryHook.h" />
+    <ClInclude Include="TestFramework\Utils\Log.h" />
+    <ClInclude Include="TestFramework\Utils\ReadData.h" />
+    <ClInclude Include="Tests\BroadPhase\BroadPhaseCastRayTest.h" />
+    <ClInclude Include="Tests\BroadPhase\BroadPhaseInsertionTest.h" />
+    <ClInclude Include="Tests\BroadPhase\BroadPhaseTest.h" />
+    <ClInclude Include="Tests\Character\CharacterBaseTest.h" />
+    <ClInclude Include="Tests\Character\CharacterSpaceShipTest.h" />
+    <ClInclude Include="Tests\Character\CharacterTest.h" />
+    <ClInclude Include="Tests\Character\CharacterVirtualTest.h" />
+    <ClInclude Include="Tests\Constraints\ConeConstraintTest.h" />
+    <ClInclude Include="Tests\Constraints\ConstraintPriorityTest.h" />
+    <ClInclude Include="Tests\Constraints\ConstraintSingularityTest.h" />
+    <ClInclude Include="Tests\Constraints\ConstraintVsCOMChangeTest.h" />
+    <ClInclude Include="Tests\Constraints\DistanceConstraintTest.h" />
+    <ClInclude Include="Tests\Constraints\FixedConstraintTest.h" />
+    <ClInclude Include="Tests\Constraints\GearConstraintTest.h" />
+    <ClInclude Include="Tests\Constraints\HingeConstraintTest.h" />
+    <ClInclude Include="Tests\Constraints\PathConstraintTest.h" />
+    <ClInclude Include="Tests\Constraints\PointConstraintTest.h" />
+    <ClInclude Include="Tests\Constraints\PoweredHingeConstraintTest.h" />
+    <ClInclude Include="Tests\Constraints\PoweredSliderConstraintTest.h" />
+    <ClInclude Include="Tests\Constraints\PoweredSwingTwistConstraintTest.h" />
+    <ClInclude Include="Tests\Constraints\PulleyConstraintTest.h" />
+    <ClInclude Include="Tests\Constraints\RackAndPinionConstraintTest.h" />
+    <ClInclude Include="Tests\Constraints\SixDOFConstraintTest.h" />
+    <ClInclude Include="Tests\Constraints\SliderConstraintTest.h" />
+    <ClInclude Include="Tests\Constraints\SpringTest.h" />
+    <ClInclude Include="Tests\Constraints\SwingTwistConstraintFrictionTest.h" />
+    <ClInclude Include="Tests\Constraints\SwingTwistConstraintTest.h" />
+    <ClInclude Include="Tests\ConvexCollision\CapsuleVsBoxTest.h" />
+    <ClInclude Include="Tests\ConvexCollision\ClosestPointTest.h" />
+    <ClInclude Include="Tests\ConvexCollision\ConvexHullShrinkTest.h" />
+    <ClInclude Include="Tests\ConvexCollision\ConvexHullTest.h" />
+    <ClInclude Include="Tests\ConvexCollision\EPATest.h" />
+    <ClInclude Include="Tests\ConvexCollision\InteractivePairsTest.h" />
+    <ClInclude Include="Tests\ConvexCollision\RandomRayTest.h" />
+    <ClInclude Include="Tests\General\ActivateDuringUpdateTest.h" />
+    <ClInclude Include="Tests\General\ActiveEdgesTest.h" />
+    <ClInclude Include="Tests\General\AllowedDOFsTest.h" />
+    <ClInclude Include="Tests\General\BigVsSmallTest.h" />
+    <ClInclude Include="Tests\General\CenterOfMassTest.h" />
+    <ClInclude Include="Tests\General\ChangeMotionQualityTest.h" />
+    <ClInclude Include="Tests\General\ChangeMotionTypeTest.h" />
+    <ClInclude Include="Tests\General\ChangeObjectLayerTest.h" />
+    <ClInclude Include="Tests\General\ChangeShapeTest.h" />
+    <ClInclude Include="Tests\General\ContactListenerTest.h" />
+    <ClInclude Include="Tests\General\ContactManifoldTest.h" />
+    <ClInclude Include="Tests\General\ConveyorBeltTest.h" />
+    <ClInclude Include="Tests\General\DampingTest.h" />
+    <ClInclude Include="Tests\General\DynamicMeshTest.h" />
+    <ClInclude Include="Tests\General\FrictionPerTriangleTest.h" />
+    <ClInclude Include="Tests\General\FrictionTest.h" />
+    <ClInclude Include="Tests\General\FunnelTest.h" />
+    <ClInclude Include="Tests\General\GravityFactorTest.h" />
+    <ClInclude Include="Tests\General\HeavyOnLightTest.h" />
+    <ClInclude Include="Tests\General\HighSpeedTest.h" />
+    <ClInclude Include="Tests\General\IslandTest.h" />
+    <ClInclude Include="Tests\General\KinematicTest.h" />
+    <ClInclude Include="Tests\General\LoadSaveBinaryTest.h" />
+    <ClInclude Include="Tests\General\LoadSaveSceneTest.h" />
+    <ClInclude Include="Tests\General\ManifoldReductionTest.h" />
+    <ClInclude Include="Tests\General\ModifyMassTest.h" />
+    <ClInclude Include="Tests\General\MultithreadedTest.h" />
+    <ClInclude Include="Tests\General\PyramidTest.h" />
+    <ClInclude Include="Tests\General\RestitutionTest.h" />
+    <ClInclude Include="Tests\General\SensorTest.h" />
+    <ClInclude Include="Tests\General\ShapeFilterTest.h" />
+    <ClInclude Include="Tests\General\SimpleTest.h" />
+    <ClInclude Include="Tests\General\StackTest.h" />
+    <ClInclude Include="Tests\General\TwoDFunnelTest.h" />
+    <ClInclude Include="Tests\General\WallTest.h" />
+    <ClInclude Include="Tests\Rig\BigWorldTest.h" />
+    <ClInclude Include="Tests\Rig\CreateRigTest.h" />
+    <ClInclude Include="Tests\Rig\KinematicRigTest.h" />
+    <ClInclude Include="Tests\Rig\LoadRigTest.h" />
+    <ClInclude Include="Tests\Rig\LoadSaveBinaryRigTest.h" />
+    <ClInclude Include="Tests\Rig\LoadSaveRigTest.h" />
+    <ClInclude Include="Tests\Rig\PoweredRigTest.h" />
+    <ClInclude Include="Tests\Rig\RigPileTest.h" />
+    <ClInclude Include="Tests\Rig\SkeletonMapperTest.h" />
+    <ClInclude Include="Tests\ScaledShapes\ScaledBoxShapeTest.h" />
+    <ClInclude Include="Tests\ScaledShapes\ScaledCapsuleShapeTest.h" />
+    <ClInclude Include="Tests\ScaledShapes\ScaledConvexHullShapeTest.h" />
+    <ClInclude Include="Tests\ScaledShapes\ScaledCylinderShapeTest.h" />
+    <ClInclude Include="Tests\ScaledShapes\ScaledHeightFieldShapeTest.h" />
+    <ClInclude Include="Tests\ScaledShapes\ScaledMeshShapeTest.h" />
+    <ClInclude Include="Tests\ScaledShapes\ScaledMutableCompoundShapeTest.h" />
+    <ClInclude Include="Tests\ScaledShapes\ScaledOffsetCenterOfMassShapeTest.h" />
+    <ClInclude Include="Tests\ScaledShapes\ScaledSphereShapeTest.h" />
+    <ClInclude Include="Tests\ScaledShapes\ScaledStaticCompoundShapeTest.h" />
+    <ClInclude Include="Tests\ScaledShapes\ScaledTaperedCapsuleShapeTest.h" />
+    <ClInclude Include="Tests\ScaledShapes\ScaledTriangleShapeTest.h" />
+    <ClInclude Include="Tests\Shapes\BoxShapeTest.h" />
+    <ClInclude Include="Tests\Shapes\CapsuleShapeTest.h" />
+    <ClInclude Include="Tests\Shapes\ConvexHullShapeTest.h" />
+    <ClInclude Include="Tests\Shapes\CylinderShapeTest.h" />
+    <ClInclude Include="Tests\Shapes\DeformedHeightFieldShapeTest.h" />
+    <ClInclude Include="Tests\Shapes\HeightFieldShapeTest.h" />
+    <ClInclude Include="Tests\Shapes\MeshShapeTest.h" />
+    <ClInclude Include="Tests\Shapes\MutableCompoundShapeTest.h" />
+    <ClInclude Include="Tests\Shapes\OffsetCenterOfMassShapeTest.h" />
+    <ClInclude Include="Tests\Shapes\RotatedTranslatedShapeTest.h" />
+    <ClInclude Include="Tests\Shapes\SphereShapeTest.h" />
+    <ClInclude Include="Tests\Shapes\StaticCompoundShapeTest.h" />
+    <ClInclude Include="Tests\Shapes\TaperedCapsuleShapeTest.h" />
+    <ClInclude Include="Tests\Shapes\TriangleShapeTest.h" />
+    <ClInclude Include="Tests\SoftBody\SoftBodyFrictionTest.h" />
+    <ClInclude Include="Tests\SoftBody\SoftBodyGravityFactorTest.h" />
+    <ClInclude Include="Tests\SoftBody\SoftBodyKinematicTest.h" />
+    <ClInclude Include="Tests\SoftBody\SoftBodyPressureTest.h" />
+    <ClInclude Include="Tests\SoftBody\SoftBodyRestitutionTest.h" />
+    <ClInclude Include="Tests\SoftBody\SoftBodyShapesTest.h" />
+    <ClInclude Include="Tests\SoftBody\SoftBodyStressTest.h" />
+    <ClInclude Include="Tests\SoftBody\SoftBodyUpdatePositionTest.h" />
+    <ClInclude Include="Tests\Test.h" />
+    <ClInclude Include="Tests\Tools\LoadSnapshotTest.h" />
+    <ClInclude Include="Tests\Vehicle\MotorcycleTest.h" />
+    <ClInclude Include="Tests\Vehicle\TankTest.h" />
+    <ClInclude Include="Tests\Vehicle\VehicleConstraintTest.h" />
+    <ClInclude Include="Tests\Vehicle\VehicleSixDOFTest.h" />
+    <ClInclude Include="Tests\Vehicle\VehicleTest.h" />
+    <ClInclude Include="Tests\Water\WaterShapeTest.h" />
+    <ClInclude Include="Utils\ContactListenerImpl.h" />
+    <ClInclude Include="Utils\DebugRendererSP.h" />
+    <ClInclude Include="Utils\RagdollLoader.h" />
+    <ClInclude Include="Utils\ShapeCreator.h" />
+    <ClInclude Include="Utils\SoftBodyCreator.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="icon1.ico" />
@@ -554,7 +891,13 @@
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug2D|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug3D|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
@@ -567,11 +910,18 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug2D|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug3D|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -585,28 +935,51 @@
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug2D|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug3D|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug2D|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug3D|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer;C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer\3rdparty;$(IncludePath)</IncludePath>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug2D|x64'">
+    <IncludePath>C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer\Utils;C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer\Tests;C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer\TestFramework;C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer;C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer\3rdparty;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\$(ProjectName)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug3D|x64'">
+    <IncludePath>C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer\TestFramework;C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer;C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer\3rdparty;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\$(ProjectName)</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>SimSoccer;Common;$(IncludePath)</IncludePath>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug2D|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug3D|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
@@ -634,7 +1007,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug2D|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
@@ -652,6 +1025,35 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d12.lib;shcore.lib;dxguid.lib;dinput8.lib;dxgi.lib;d3dcompiler.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug3D|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN3D;WIN32;_WINDOWS;_DEBUG;JPH_PROFILE_ENABLED;JPH_DEBUG_RENDERER;JPH_FLOATING_POINT_EXCEPTIONS_ENABLED;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ConformanceMode>Default</ConformanceMode>
+      <AdditionalOptions>/utf-8 /Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <EnableEnhancedInstructionSet>NoExtensions</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile />
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d12.lib;shcore.lib;dxguid.lib;dinput8.lib;dxgi.lib;d3dcompiler.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <AdditionalOptions>%(AdditionalOptions) /ignore:4221</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

@@ -285,7 +285,7 @@ void CompoundShape::sCastCompoundVsShape(const ShapeCast &inShapeCast, const Sha
 		Vec3 scale = shape.TransformScale(inShapeCast.mScale);
 		ShapeCast shape_cast(shape.mShape, scale, transform, inShapeCast.mDirection);
 
-		CollisionDispatch::Instance()->sCastShapeVsShapeLocalSpace(shape_cast, inShapeCastSettings, inShape, inScale, inShapeFilter, inCenterOfMassTransform2, shape1_sub_shape_id, inSubShapeIDCreator2, ioCollector);
+		CollisionDispatch::sCastShapeVsShapeLocalSpace(shape_cast, inShapeCastSettings, inShape, inScale, inShapeFilter, inCenterOfMassTransform2, shape1_sub_shape_id, inSubShapeIDCreator2, ioCollector);
 
 		if (ioCollector.ShouldEarlyOut())
 			break;
@@ -402,9 +402,7 @@ void CompoundShape::sRegister()
 {
 	for (EShapeSubType s1 : sCompoundSubShapeTypes)
 		for (EShapeSubType s2 : sAllSubShapeTypes)
-		{
-			CollisionDispatch::Instance()->sRegisterCastShape(s1, s2, sCastCompoundVsShape);
-		}
+			CollisionDispatch::sRegisterCastShape(s1, s2, sCastCompoundVsShape);
 }
 
 JPH_NAMESPACE_END

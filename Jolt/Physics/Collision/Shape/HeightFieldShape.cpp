@@ -1993,16 +1993,16 @@ void HeightFieldShape::sRegister()
 
 	for (EShapeSubType s : sConvexSubShapeTypes)
 	{
-		CollisionDispatch::Instance()->sRegisterCollideShape(s, EShapeSubType::HeightField, sCollideConvexVsHeightField);
-		CollisionDispatch::Instance()->sRegisterCastShape(s, EShapeSubType::HeightField, sCastConvexVsHeightField);
+		CollisionDispatch::sRegisterCollideShape(s, EShapeSubType::HeightField, sCollideConvexVsHeightField);
+		CollisionDispatch::sRegisterCastShape(s, EShapeSubType::HeightField, sCastConvexVsHeightField);
 
-		// CollisionDispatch::Instance()->sRegisterCastShape(EShapeSubType::HeightField, s, &CollisionDispatch::sReversedCastShape);
-		// CollisionDispatch::Instance()->sRegisterCollideShape(EShapeSubType::HeightField, s, &CollisionDispatch::sReversedCollideShape);
+		CollisionDispatch::sRegisterCastShape(EShapeSubType::HeightField, s, CollisionDispatch::sReversedCastShape);
+		CollisionDispatch::sRegisterCollideShape(EShapeSubType::HeightField, s, CollisionDispatch::sReversedCollideShape);
 	}
 
 	// Specialized collision functions
-	CollisionDispatch::Instance()->sRegisterCollideShape(EShapeSubType::Sphere, EShapeSubType::HeightField, sCollideSphereVsHeightField);
-	CollisionDispatch::Instance()->sRegisterCastShape(EShapeSubType::Sphere, EShapeSubType::HeightField, sCastSphereVsHeightField);
+	CollisionDispatch::sRegisterCollideShape(EShapeSubType::Sphere, EShapeSubType::HeightField, sCollideSphereVsHeightField);
+	CollisionDispatch::sRegisterCastShape(EShapeSubType::Sphere, EShapeSubType::HeightField, sCastSphereVsHeightField);
 }
 
 JPH_NAMESPACE_END

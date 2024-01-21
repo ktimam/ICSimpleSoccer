@@ -91,7 +91,7 @@ void RegisterTypesInternal(uint64 inVersionID)
 	JPH_ASSERT(Factory::sInstance != nullptr, "Need to create a factory first!");
 
 	// Initialize dispatcher
-	CollisionDispatch::Instance()->sInit();
+	CollisionDispatch::sInit();
 
 	// Register base classes first so that we can specialize them later
 	CompoundShape::sRegister();

@@ -237,14 +237,10 @@ void RagdollSettings::DisableParentChildCollisions(const Mat44 *inJointMatrices,
 						// If there is a collision, disable the collision between the joints
 						AnyHitCollisionCollector<CollideShapeCollector> collector;
 						if (part1.HasMassProperties()) // Ensure that the first shape is always a dynamic one (we can't check mesh vs convex but we can check convex vs mesh)
-						{
-							CollisionDispatch::Instance()->sCollideShapeVsShape(shape1, shape2, scale1, scale2, com1, com2, SubShapeIDCreator(), SubShapeIDCreator(), settings, collector);
-						
-						}	else{
-							CollisionDispatch::Instance()->sCollideShapeVsShape(shape2, shape1, scale2, scale1, com2, com1, SubShapeIDCreator(), SubShapeIDCreator(), settings, collector);
-						
-						}
-							if (collector.HadHit())
+							CollisionDispatch::sCollideShapeVsShape(shape1, shape2, scale1, scale2, com1, com2, SubShapeIDCreator(), SubShapeIDCreator(), settings, collector);
+						else
+							CollisionDispatch::sCollideShapeVsShape(shape2, shape1, scale2, scale1, com2, com1, SubShapeIDCreator(), SubShapeIDCreator(), settings, collector);
+						if (collector.HadHit())
 							group_filter->DisableCollision(j1, j2);
 					}
 				}

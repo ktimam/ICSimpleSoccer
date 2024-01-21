@@ -1,4 +1,5 @@
 #ifndef LINUX
+#ifndef WIN3D
 
 #ifndef CGDI_H
 #define CGDI_H
@@ -391,4 +392,5 @@ public:
 
 #endif
 
+#endif
 #endif

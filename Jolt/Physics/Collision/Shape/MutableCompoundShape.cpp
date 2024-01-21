@@ -551,9 +551,9 @@ void MutableCompoundShape::sRegister()
 
 	for (EShapeSubType s : sAllSubShapeTypes)
 	{
-		CollisionDispatch::Instance()->sRegisterCollideShape(EShapeSubType::MutableCompound, s, sCollideCompoundVsShape);
-		CollisionDispatch::Instance()->sRegisterCollideShape(s, EShapeSubType::MutableCompound, sCollideShapeVsCompound);
-		CollisionDispatch::Instance()->sRegisterCastShape(s, EShapeSubType::MutableCompound, sCastShapeVsCompound);
+		CollisionDispatch::sRegisterCollideShape(EShapeSubType::MutableCompound, s, sCollideCompoundVsShape);
+		CollisionDispatch::sRegisterCollideShape(s, EShapeSubType::MutableCompound, sCollideShapeVsCompound);
+		CollisionDispatch::sRegisterCastShape(s, EShapeSubType::MutableCompound, sCastShapeVsCompound);
 	}
 }
 

@@ -1183,16 +1183,16 @@ void MeshShape::sRegister()
 
 	for (EShapeSubType s : sConvexSubShapeTypes)
 	{
-		CollisionDispatch::Instance()->sRegisterCollideShape(s, EShapeSubType::Mesh, &MeshShape::sCollideConvexVsMesh);
-		CollisionDispatch::Instance()->sRegisterCastShape(s, EShapeSubType::Mesh, &MeshShape::sCastConvexVsMesh);
+		CollisionDispatch::sRegisterCollideShape(s, EShapeSubType::Mesh, sCollideConvexVsMesh);
+		CollisionDispatch::sRegisterCastShape(s, EShapeSubType::Mesh, sCastConvexVsMesh);
 
-		// CollisionDispatch::Instance()->sRegisterCastShape(EShapeSubType::Mesh, s, &CollisionDispatch::sReversedCastShape);
-		// CollisionDispatch::Instance()->sRegisterCollideShape(EShapeSubType::Mesh, s, &CollisionDispatch::sReversedCollideShape);
+		CollisionDispatch::sRegisterCastShape(EShapeSubType::Mesh, s, CollisionDispatch::sReversedCastShape);
+		CollisionDispatch::sRegisterCollideShape(EShapeSubType::Mesh, s, CollisionDispatch::sReversedCollideShape);
 	}
 
 	// Specialized collision functions
-	CollisionDispatch::Instance()->sRegisterCollideShape(EShapeSubType::Sphere, EShapeSubType::Mesh, &MeshShape::sCollideSphereVsMesh);
-	CollisionDispatch::Instance()->sRegisterCastShape(EShapeSubType::Sphere, EShapeSubType::Mesh, &MeshShape::sCastSphereVsMesh);
+	CollisionDispatch::sRegisterCollideShape(EShapeSubType::Sphere, EShapeSubType::Mesh, sCollideSphereVsMesh);
+	CollisionDispatch::sRegisterCastShape(EShapeSubType::Sphere, EShapeSubType::Mesh, sCastSphereVsMesh);
 }
 
 JPH_NAMESPACE_END

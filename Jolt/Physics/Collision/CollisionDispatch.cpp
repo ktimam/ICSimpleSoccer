@@ -9,10 +9,8 @@
 
 JPH_NAMESPACE_BEGIN
 
-//CollisionDispatch::CollideShape CollisionDispatch::sCollideShape[NumSubShapeTypes][NumSubShapeTypes];
-//CollisionDispatch::CastShape CollisionDispatch::sCastShape[NumSubShapeTypes][NumSubShapeTypes];
-
-CollisionDispatch* CollisionDispatch::sCollisionDispatchInstance;
+CollisionDispatch::CollideShape CollisionDispatch::sCollideShape[NumSubShapeTypes][NumSubShapeTypes];
+CollisionDispatch::CastShape CollisionDispatch::sCastShape[NumSubShapeTypes][NumSubShapeTypes];
 
 void CollisionDispatch::sInit()
 {

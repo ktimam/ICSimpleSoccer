@@ -1,4 +1,5 @@
 #ifndef LINUX
+#ifndef WIN3D
 
 #include "WindowUtils.h"
 #include <windows.h>
@@ -236,4 +237,5 @@ int  GetWindowWidth(HWND hwnd)
   return windowRect.right - windowRect.left;
 }
 
+#endif
 #endif

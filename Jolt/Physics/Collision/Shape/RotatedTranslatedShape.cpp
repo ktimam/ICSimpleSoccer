@@ -188,7 +188,7 @@ void RotatedTranslatedShape::sCollideRotatedTranslatedVsShape(const Shape *inSha
 	// Get world transform of 1
 	Mat44 transform1 = inCenterOfMassTransform1 * Mat44::sRotation(shape1->mRotation);
 
-	CollisionDispatch::Instance()->sCollideShapeVsShape(shape1->mInnerShape, inShape2, shape1->TransformScale(inScale1), inScale2, transform1, inCenterOfMassTransform2, inSubShapeIDCreator1, inSubShapeIDCreator2, inCollideShapeSettings, ioCollector, inShapeFilter);
+	CollisionDispatch::sCollideShapeVsShape(shape1->mInnerShape, inShape2, shape1->TransformScale(inScale1), inScale2, transform1, inCenterOfMassTransform2, inSubShapeIDCreator1, inSubShapeIDCreator2, inCollideShapeSettings, ioCollector, inShapeFilter);
 }
 
 void RotatedTranslatedShape::sCollideShapeVsRotatedTranslated(const Shape *inShape1, const Shape *inShape2, Vec3Arg inScale1, Vec3Arg inScale2, Mat44Arg inCenterOfMassTransform1, Mat44Arg inCenterOfMassTransform2, const SubShapeIDCreator &inSubShapeIDCreator1, const SubShapeIDCreator &inSubShapeIDCreator2, const CollideShapeSettings &inCollideShapeSettings, CollideShapeCollector &ioCollector, const ShapeFilter &inShapeFilter)
@@ -199,7 +199,7 @@ void RotatedTranslatedShape::sCollideShapeVsRotatedTranslated(const Shape *inSha
 	// Get world transform of 2
 	Mat44 transform2 = inCenterOfMassTransform2 * Mat44::sRotation(shape2->mRotation);
 
-	CollisionDispatch::Instance()->sCollideShapeVsShape(inShape1, shape2->mInnerShape, inScale1, shape2->TransformScale(inScale2), inCenterOfMassTransform1, transform2, inSubShapeIDCreator1, inSubShapeIDCreator2, inCollideShapeSettings, ioCollector, inShapeFilter);
+	CollisionDispatch::sCollideShapeVsShape(inShape1, shape2->mInnerShape, inScale1, shape2->TransformScale(inScale2), inCenterOfMassTransform1, transform2, inSubShapeIDCreator1, inSubShapeIDCreator2, inCollideShapeSettings, ioCollector, inShapeFilter);
 }
 
 void RotatedTranslatedShape::sCastRotatedTranslatedVsShape(const ShapeCast &inShapeCast, const ShapeCastSettings &inShapeCastSettings, const Shape *inShape, Vec3Arg inScale, const ShapeFilter &inShapeFilter, Mat44Arg inCenterOfMassTransform2, const SubShapeIDCreator &inSubShapeIDCreator1, const SubShapeIDCreator &inSubShapeIDCreator2, CastShapeCollector &ioCollector)
@@ -213,7 +213,7 @@ void RotatedTranslatedShape::sCastRotatedTranslatedVsShape(const ShapeCast &inSh
 	Vec3 scale = shape1->TransformScale(inShapeCast.mScale);
 	ShapeCast shape_cast(shape1->mInnerShape, scale, transform, inShapeCast.mDirection);
 
-	CollisionDispatch::Instance()->sCastShapeVsShapeLocalSpace(shape_cast, inShapeCastSettings, inShape, inScale, inShapeFilter, inCenterOfMassTransform2, inSubShapeIDCreator1, inSubShapeIDCreator2, ioCollector);
+	CollisionDispatch::sCastShapeVsShapeLocalSpace(shape_cast, inShapeCastSettings, inShape, inScale, inShapeFilter, inCenterOfMassTransform2, inSubShapeIDCreator1, inSubShapeIDCreator2, ioCollector);
 }
 
 void RotatedTranslatedShape::sCastShapeVsRotatedTranslated(const ShapeCast &inShapeCast, const ShapeCastSettings &inShapeCastSettings, const Shape *inShape, Vec3Arg inScale, const ShapeFilter &inShapeFilter, Mat44Arg inCenterOfMassTransform2, const SubShapeIDCreator &inSubShapeIDCreator1, const SubShapeIDCreator &inSubShapeIDCreator2, CastShapeCollector &ioCollector)
@@ -227,7 +227,7 @@ void RotatedTranslatedShape::sCastShapeVsRotatedTranslated(const ShapeCast &inSh
 	// Transform the shape cast
 	ShapeCast shape_cast = inShapeCast.PostTransformed(local_transform.Transposed3x3());
 
-	CollisionDispatch::Instance()->sCastShapeVsShapeLocalSpace(shape_cast, inShapeCastSettings, shape->mInnerShape, shape->TransformScale(inScale), inShapeFilter, inCenterOfMassTransform2 * local_transform, inSubShapeIDCreator1, inSubShapeIDCreator2, ioCollector);
+	CollisionDispatch::sCastShapeVsShapeLocalSpace(shape_cast, inShapeCastSettings, shape->mInnerShape, shape->TransformScale(inScale), inShapeFilter, inCenterOfMassTransform2 * local_transform, inSubShapeIDCreator1, inSubShapeIDCreator2, ioCollector);
 }
 
 void RotatedTranslatedShape::SaveBinaryState(StreamOut &inStream) const
@@ -269,10 +269,10 @@ void RotatedTranslatedShape::sRegister()
 
 	for (EShapeSubType s : sAllSubShapeTypes)
 	{
-		CollisionDispatch::Instance()->sRegisterCollideShape(EShapeSubType::RotatedTranslated, s, sCollideRotatedTranslatedVsShape);
-		CollisionDispatch::Instance()->sRegisterCollideShape(s, EShapeSubType::RotatedTranslated, sCollideShapeVsRotatedTranslated);
-		CollisionDispatch::Instance()->sRegisterCastShape(EShapeSubType::RotatedTranslated, s, sCastRotatedTranslatedVsShape);
-		CollisionDispatch::Instance()->sRegisterCastShape(s, EShapeSubType::RotatedTranslated, sCastShapeVsRotatedTranslated);
+		CollisionDispatch::sRegisterCollideShape(EShapeSubType::RotatedTranslated, s, sCollideRotatedTranslatedVsShape);
+		CollisionDispatch::sRegisterCollideShape(s, EShapeSubType::RotatedTranslated, sCollideShapeVsRotatedTranslated);
+		CollisionDispatch::sRegisterCastShape(EShapeSubType::RotatedTranslated, s, sCastRotatedTranslatedVsShape);
+		CollisionDispatch::sRegisterCastShape(s, EShapeSubType::RotatedTranslated, sCastShapeVsRotatedTranslated);
 	}
 }
 

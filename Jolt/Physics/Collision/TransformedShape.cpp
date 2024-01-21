@@ -90,7 +90,7 @@ void TransformedShape::CollideShape(const Shape *inShape, Vec3Arg inShapeScale, 
 		SubShapeIDCreator sub_shape_id1, sub_shape_id2(mSubShapeIDCreator);
 		Mat44 transform1 = inCenterOfMassTransform.PostTranslated(-inBaseOffset).ToMat44();
 		Mat44 transform2 = GetCenterOfMassTransform().PostTranslated(-inBaseOffset).ToMat44();
-		CollisionDispatch::Instance()->sCollideShapeVsShape(inShape, mShape, inShapeScale, GetShapeScale(), transform1, transform2, sub_shape_id1, sub_shape_id2, inCollideShapeSettings, ioCollector, inShapeFilter);
+		CollisionDispatch::sCollideShapeVsShape(inShape, mShape, inShapeScale, GetShapeScale(), transform1, transform2, sub_shape_id1, sub_shape_id2, inCollideShapeSettings, ioCollector, inShapeFilter);
 	}
 }
 
@@ -109,7 +109,7 @@ void TransformedShape::CastShape(const RShapeCast &inShapeCast, const ShapeCastS
 		Mat44 center_of_mass_transform2 = GetCenterOfMassTransform().PostTranslated(-inBaseOffset).ToMat44();
 
 		SubShapeIDCreator sub_shape_id1, sub_shape_id2(mSubShapeIDCreator);
-		CollisionDispatch::Instance()->sCastShapeVsShapeWorldSpace(shape_cast, inShapeCastSettings, mShape, GetShapeScale(), inShapeFilter, center_of_mass_transform2, sub_shape_id1, sub_shape_id2, ioCollector);
+		CollisionDispatch::sCastShapeVsShapeWorldSpace(shape_cast, inShapeCastSettings, mShape, GetShapeScale(), inShapeFilter, center_of_mass_transform2, sub_shape_id1, sub_shape_id2, ioCollector);
 	}
 }
 

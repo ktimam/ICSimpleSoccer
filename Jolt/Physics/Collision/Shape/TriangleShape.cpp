@@ -441,13 +441,13 @@ void TriangleShape::sRegister()
 
 	for (EShapeSubType s : sConvexSubShapeTypes)
 	{
-		CollisionDispatch::Instance()->sRegisterCollideShape(s, EShapeSubType::Triangle, sCollideConvexVsTriangle);
-		CollisionDispatch::Instance()->sRegisterCastShape(s, EShapeSubType::Triangle, sCastConvexVsTriangle);
+		CollisionDispatch::sRegisterCollideShape(s, EShapeSubType::Triangle, sCollideConvexVsTriangle);
+		CollisionDispatch::sRegisterCastShape(s, EShapeSubType::Triangle, sCastConvexVsTriangle);
 	}
 
 	// Specialized collision functions
-	CollisionDispatch::Instance()->sRegisterCollideShape(EShapeSubType::Sphere, EShapeSubType::Triangle, sCollideSphereVsTriangle);
-	CollisionDispatch::Instance()->sRegisterCastShape(EShapeSubType::Sphere, EShapeSubType::Triangle, sCastSphereVsTriangle);
+	CollisionDispatch::sRegisterCollideShape(EShapeSubType::Sphere, EShapeSubType::Triangle, sCollideSphereVsTriangle);
+	CollisionDispatch::sRegisterCastShape(EShapeSubType::Sphere, EShapeSubType::Triangle, sCastSphereVsTriangle);
 }
 
 JPH_NAMESPACE_END

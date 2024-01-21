@@ -1,4 +1,5 @@
 #ifndef LINUX
+#ifndef WIN3D
 #include "../misc/Cgdi.h"
 
 
@@ -90,5 +91,6 @@ Cgdi::~Cgdi()
   DeleteObject(m_OrangeBrush);
 
 }
+#endif
 #endif
 

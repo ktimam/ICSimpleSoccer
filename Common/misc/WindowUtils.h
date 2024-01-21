@@ -1,4 +1,5 @@
 #ifndef LINUX
+#ifndef WIN3D
 
 #ifndef WINDOW_UTILS_H
 #define WINDOW_UTILS_H
@@ -83,4 +84,5 @@ int  GetWindowWidth(HWND hwnd);
 
 #endif
 
+#endif
 #endif

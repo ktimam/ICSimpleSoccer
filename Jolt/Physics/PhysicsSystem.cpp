@@ -1100,7 +1100,7 @@ void PhysicsSystem::ProcessBodyPair(ContactAllocator &ioContactAllocator, const 
 
 			// Perform collision detection between the two shapes
 			SubShapeIDCreator part1, part2;
-			CollisionDispatch::Instance()->sCollideShapeVsShape(body1->GetShape(), body2->GetShape(), Vec3::sReplicate(1.0f), Vec3::sReplicate(1.0f), transform1, transform2, part1, part2, settings, collector);
+			CollisionDispatch::sCollideShapeVsShape(body1->GetShape(), body2->GetShape(), Vec3::sReplicate(1.0f), Vec3::sReplicate(1.0f), transform1, transform2, part1, part2, settings, collector);
 
 			// Add the contacts
 			for (ContactManifold &manifold : collector.mManifolds)
@@ -1202,7 +1202,7 @@ void PhysicsSystem::ProcessBodyPair(ContactAllocator &ioContactAllocator, const 
 
 			// Perform collision detection between the two shapes
 			SubShapeIDCreator part1, part2;
-			CollisionDispatch::Instance()->sCollideShapeVsShape(body1->GetShape(), body2->GetShape(), Vec3::sReplicate(1.0f), Vec3::sReplicate(1.0f), transform1, transform2, part1, part2, settings, collector);
+			CollisionDispatch::sCollideShapeVsShape(body1->GetShape(), body2->GetShape(), Vec3::sReplicate(1.0f), Vec3::sReplicate(1.0f), transform1, transform2, part1, part2, settings, collector);
 
 			constraint_created = collector.mConstraintCreated;
 		}

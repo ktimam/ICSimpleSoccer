@@ -1,4 +1,5 @@
 #ifndef LINUX
+#ifndef WIN3D
 
 #pragma warning (disable:4786)
 #define _CRT_SECURE_NO_WARNINGS
@@ -24,6 +25,7 @@
 #include "Common/misc/WindowUtils.h"
 #include "Common/Debug/DebugConsole.h"
 #include "Common/misc/WinHttpWrapper.h"
+#include "Common/Game/PhysicsManager.h"
 
 using namespace WinHttpWrapper;
 using namespace std;
@@ -420,6 +422,8 @@ LRESULT CALLBACK WindowProc (HWND   hwnd,
          //don't forget to release the DC
          ReleaseDC(hwnd, hdc); 
          
+         PhysicsManager::Instance()->init();
+
          g_SoccerPitch = new SoccerPitch(WindowWidth, WindowHeight);
          g_MatchReplay = new Snapshot();
          //setup the vertex buffers and calculate the bounding radius
@@ -705,6 +709,8 @@ int WINAPI WinMain (HINSTANCE hInstance,
 
       //update game states
       g_SoccerPitch->Update();
+      PhysicsManager::Instance()->Update();
+      g_SoccerPitch->CheckGoal();
       updates_count++;
       //Don't take snapshot for every move
       if (updates_count % SNAPSHOT_RATE == 1 || updates_count == 1) 
@@ -776,6 +782,9 @@ int WINAPI WinMain (HINSTANCE hInstance,
             IncrementTime(1);
           }
           g_SoccerPitch->Update();
+          PhysicsManager::Instance()->Update();
+          g_SoccerPitch->CheckGoal();
+         
           if (LOG_MATCH_OUTPUT)
           {
             updates_count++;
@@ -806,4 +815,5 @@ int WINAPI WinMain (HINSTANCE hInstance,
   return msg.wParam;
 }
 
+#endif
 #endif

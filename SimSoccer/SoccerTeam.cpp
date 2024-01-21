@@ -573,12 +573,12 @@ void SoccerTeam::ReturnAllFieldPlayersToHome()const
 void SoccerTeam::CreatePlayers()
 {
     float player_elevation = 2;
+      // Character size
+      float	cCharacterHeightStanding = 13.5f;
+      float	cCharacterRadiusStanding = 3.0f;
+
   if (Color() == blue)
   {
-      // Character size
-      float	cCharacterHeightStanding = 1.35f;
-      float	cCharacterRadiusStanding = 0.3f;
-
       // Create 'player' character
       Ref<CharacterSettings> settings = new CharacterSettings();
       settings->mMaxSlopeAngle = DegreesToRadians(45.0f);
@@ -656,10 +656,6 @@ void SoccerTeam::CreatePlayers()
 
   else
   {
-      // Character size
-      float	cCharacterHeightStanding = 1.35f;
-      float	cCharacterRadiusStanding = 0.3f;
-
       // Create 'player' character
       Ref<CharacterSettings> settings = new CharacterSettings();
       settings->mMaxSlopeAngle = DegreesToRadians(45.0f);

@@ -180,7 +180,7 @@ void ScaledShape::sCollideScaledVsShape(const Shape *inShape1, const Shape *inSh
 	JPH_ASSERT(inShape1->GetSubType() == EShapeSubType::Scaled);
 	const ScaledShape *shape1 = static_cast<const ScaledShape *>(inShape1);
 
-	CollisionDispatch::Instance()->sCollideShapeVsShape(shape1->GetInnerShape(), inShape2, inScale1 * shape1->GetScale(), inScale2, inCenterOfMassTransform1, inCenterOfMassTransform2, inSubShapeIDCreator1, inSubShapeIDCreator2, inCollideShapeSettings, ioCollector, inShapeFilter);
+	CollisionDispatch::sCollideShapeVsShape(shape1->GetInnerShape(), inShape2, inScale1 * shape1->GetScale(), inScale2, inCenterOfMassTransform1, inCenterOfMassTransform2, inSubShapeIDCreator1, inSubShapeIDCreator2, inCollideShapeSettings, ioCollector, inShapeFilter);
 }
 
 void ScaledShape::sCollideShapeVsScaled(const Shape *inShape1, const Shape *inShape2, Vec3Arg inScale1, Vec3Arg inScale2, Mat44Arg inCenterOfMassTransform1, Mat44Arg inCenterOfMassTransform2, const SubShapeIDCreator &inSubShapeIDCreator1, const SubShapeIDCreator &inSubShapeIDCreator2, const CollideShapeSettings &inCollideShapeSettings, CollideShapeCollector &ioCollector, const ShapeFilter &inShapeFilter)
@@ -188,7 +188,7 @@ void ScaledShape::sCollideShapeVsScaled(const Shape *inShape1, const Shape *inSh
 	JPH_ASSERT(inShape2->GetSubType() == EShapeSubType::Scaled);
 	const ScaledShape *shape2 = static_cast<const ScaledShape *>(inShape2);
 
-	CollisionDispatch::Instance()->sCollideShapeVsShape(inShape1, shape2->GetInnerShape(), inScale1, inScale2 * shape2->GetScale(), inCenterOfMassTransform1, inCenterOfMassTransform2, inSubShapeIDCreator1, inSubShapeIDCreator2, inCollideShapeSettings, ioCollector, inShapeFilter);
+	CollisionDispatch::sCollideShapeVsShape(inShape1, shape2->GetInnerShape(), inScale1, inScale2 * shape2->GetScale(), inCenterOfMassTransform1, inCenterOfMassTransform2, inSubShapeIDCreator1, inSubShapeIDCreator2, inCollideShapeSettings, ioCollector, inShapeFilter);
 }
 
 void ScaledShape::sCastScaledVsShape(const ShapeCast &inShapeCast, const ShapeCastSettings &inShapeCastSettings, const Shape *inShape, Vec3Arg inScale, const ShapeFilter &inShapeFilter, Mat44Arg inCenterOfMassTransform2, const SubShapeIDCreator &inSubShapeIDCreator1, const SubShapeIDCreator &inSubShapeIDCreator2, CastShapeCollector &ioCollector)
@@ -197,7 +197,7 @@ void ScaledShape::sCastScaledVsShape(const ShapeCast &inShapeCast, const ShapeCa
 	const ScaledShape *shape = static_cast<const ScaledShape *>(inShapeCast.mShape);
 
 	ShapeCast scaled_cast(shape->GetInnerShape(), inShapeCast.mScale * shape->GetScale(), inShapeCast.mCenterOfMassStart, inShapeCast.mDirection);
-	CollisionDispatch::Instance()->sCastShapeVsShapeLocalSpace(scaled_cast, inShapeCastSettings, inShape, inScale, inShapeFilter, inCenterOfMassTransform2, inSubShapeIDCreator1, inSubShapeIDCreator2, ioCollector);
+	CollisionDispatch::sCastShapeVsShapeLocalSpace(scaled_cast, inShapeCastSettings, inShape, inScale, inShapeFilter, inCenterOfMassTransform2, inSubShapeIDCreator1, inSubShapeIDCreator2, ioCollector);
 }
 
 void ScaledShape::sCastShapeVsScaled(const ShapeCast &inShapeCast, const ShapeCastSettings &inShapeCastSettings, const Shape *inShape, Vec3Arg inScale, const ShapeFilter &inShapeFilter, Mat44Arg inCenterOfMassTransform2, const SubShapeIDCreator &inSubShapeIDCreator1, const SubShapeIDCreator &inSubShapeIDCreator2, CastShapeCollector &ioCollector)
@@ -205,7 +205,7 @@ void ScaledShape::sCastShapeVsScaled(const ShapeCast &inShapeCast, const ShapeCa
 	JPH_ASSERT(inShape->GetSubType() == EShapeSubType::Scaled);
 	const ScaledShape *shape = static_cast<const ScaledShape *>(inShape);
 
-	CollisionDispatch::Instance()->sCastShapeVsShapeLocalSpace(inShapeCast, inShapeCastSettings, shape->mInnerShape, inScale * shape->mScale, inShapeFilter, inCenterOfMassTransform2, inSubShapeIDCreator1, inSubShapeIDCreator2, ioCollector);
+	CollisionDispatch::sCastShapeVsShapeLocalSpace(inShapeCast, inShapeCastSettings, shape->mInnerShape, inScale * shape->mScale, inShapeFilter, inCenterOfMassTransform2, inSubShapeIDCreator1, inSubShapeIDCreator2, ioCollector);
 }
 
 void ScaledShape::sRegister()
@@ -216,10 +216,10 @@ void ScaledShape::sRegister()
 
 	for (EShapeSubType s : sAllSubShapeTypes)
 	{
-		CollisionDispatch::Instance()->sRegisterCollideShape(EShapeSubType::Scaled, s, sCollideScaledVsShape);
-		CollisionDispatch::Instance()->sRegisterCollideShape(s, EShapeSubType::Scaled, sCollideShapeVsScaled);
-		CollisionDispatch::Instance()->sRegisterCastShape(EShapeSubType::Scaled, s, sCastScaledVsShape);
-		CollisionDispatch::Instance()->sRegisterCastShape(s, EShapeSubType::Scaled, sCastShapeVsScaled);
+		CollisionDispatch::sRegisterCollideShape(EShapeSubType::Scaled, s, sCollideScaledVsShape);
+		CollisionDispatch::sRegisterCollideShape(s, EShapeSubType::Scaled, sCollideShapeVsScaled);
+		CollisionDispatch::sRegisterCastShape(EShapeSubType::Scaled, s, sCastScaledVsShape);
+		CollisionDispatch::sRegisterCastShape(s, EShapeSubType::Scaled, sCastShapeVsScaled);
 	}
 }
 

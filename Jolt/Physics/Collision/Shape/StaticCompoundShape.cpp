@@ -666,9 +666,9 @@ void StaticCompoundShape::sRegister()
 
 	for (EShapeSubType s : sAllSubShapeTypes)
 	{
-		CollisionDispatch::Instance()->sRegisterCollideShape(EShapeSubType::StaticCompound, s, sCollideCompoundVsShape);
-		CollisionDispatch::Instance()->sRegisterCollideShape(s, EShapeSubType::StaticCompound, sCollideShapeVsCompound);
-		CollisionDispatch::Instance()->sRegisterCastShape(s, EShapeSubType::StaticCompound, sCastShapeVsCompound);
+		CollisionDispatch::sRegisterCollideShape(EShapeSubType::StaticCompound, s, sCollideCompoundVsShape);
+		CollisionDispatch::sRegisterCollideShape(s, EShapeSubType::StaticCompound, sCollideShapeVsCompound);
+		CollisionDispatch::sRegisterCastShape(s, EShapeSubType::StaticCompound, sCastShapeVsCompound);
 	}
 }
 

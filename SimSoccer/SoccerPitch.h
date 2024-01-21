@@ -81,6 +81,8 @@ public:
 
   void  Update();
 
+  void CheckGoal();
+
   //bool  Render();
 
   void  TogglePause(){m_bPaused = !m_bPaused;}

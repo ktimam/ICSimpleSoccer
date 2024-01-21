@@ -87,6 +87,8 @@ void play_match() {
 
     //std::cout << "Creating Pitch..." << std::endl;
 
+    PhysicsManager::Instance()->init();
+
     g_SoccerPitch = new SoccerPitch(WindowWidth, WindowHeight);
 
     if (LOG_MATCH_OUTPUT)
@@ -102,6 +104,8 @@ void play_match() {
        IncrementTime(1);
        //update game states
        g_SoccerPitch->Update();
+       PhysicsManager::Instance()->Update();
+       g_SoccerPitch->CheckGoal();
 
        if (LOG_MATCH_OUTPUT)
        {

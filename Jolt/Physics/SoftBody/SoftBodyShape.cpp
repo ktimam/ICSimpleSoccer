@@ -318,13 +318,13 @@ void SoftBodyShape::sRegister()
 
 	for (EShapeSubType s : sConvexSubShapeTypes)
 	{
-		CollisionDispatch::Instance()->sRegisterCollideShape(s, EShapeSubType::SoftBody, sCollideConvexVsSoftBody);
-		CollisionDispatch::Instance()->sRegisterCastShape(s, EShapeSubType::SoftBody, sCastConvexVsSoftBody);
+		CollisionDispatch::sRegisterCollideShape(s, EShapeSubType::SoftBody, sCollideConvexVsSoftBody);
+		CollisionDispatch::sRegisterCastShape(s, EShapeSubType::SoftBody, sCastConvexVsSoftBody);
 	}
 
 	// Specialized collision functions
-	CollisionDispatch::Instance()->sRegisterCollideShape(EShapeSubType::Sphere, EShapeSubType::SoftBody, sCollideSphereVsSoftBody);
-	CollisionDispatch::Instance()->sRegisterCastShape(EShapeSubType::Sphere, EShapeSubType::SoftBody, sCastSphereVsSoftBody);
+	CollisionDispatch::sRegisterCollideShape(EShapeSubType::Sphere, EShapeSubType::SoftBody, sCollideSphereVsSoftBody);
+	CollisionDispatch::sRegisterCastShape(EShapeSubType::Sphere, EShapeSubType::SoftBody, sCastSphereVsSoftBody);
 }
 
 JPH_NAMESPACE_END

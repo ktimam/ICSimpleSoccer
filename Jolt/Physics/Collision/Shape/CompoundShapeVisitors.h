@@ -206,7 +206,7 @@ struct CompoundShape::CastShapeVisitor
 		// Transform the shape cast
 		ShapeCast shape_cast = mShapeCast.PostTransformed(local_transform.InversedRotationTranslation());
 
-		CollisionDispatch::Instance()->sCastShapeVsShapeLocalSpace(shape_cast, mShapeCastSettings, inSubShape.mShape, inSubShape.TransformScale(mScale), mShapeFilter, center_of_mass_transform2, mSubShapeIDCreator1, shape2_sub_shape_id, mCollector);
+		CollisionDispatch::sCastShapeVsShapeLocalSpace(shape_cast, mShapeCastSettings, inSubShape.mShape, inSubShape.TransformScale(mScale), mShapeFilter, center_of_mass_transform2, mSubShapeIDCreator1, shape2_sub_shape_id, mCollector);
 	}
 
 	RayInvDirection				mInvDirection;
@@ -330,7 +330,7 @@ struct CompoundShape::CollideCompoundVsShapeVisitor
 		// Create ID for sub shape
 		SubShapeIDCreator shape1_sub_shape_id = mSubShapeIDCreator1.PushID(inSubShapeIndex, mSubShapeBits);
 
-		CollisionDispatch::Instance()->sCollideShapeVsShape(inSubShape.mShape, mShape2, inSubShape.TransformScale(mScale1), mScale2, transform1, mTransform2, shape1_sub_shape_id, mSubShapeIDCreator2, mCollideShapeSettings, mCollector, mShapeFilter);
+		CollisionDispatch::sCollideShapeVsShape(inSubShape.mShape, mShape2, inSubShape.TransformScale(mScale1), mScale2, transform1, mTransform2, shape1_sub_shape_id, mSubShapeIDCreator2, mCollideShapeSettings, mCollector, mShapeFilter);
 	}
 
 	const CollideShapeSettings &	mCollideShapeSettings;
@@ -396,7 +396,7 @@ struct CompoundShape::CollideShapeVsCompoundVisitor
 		// Get world transform of 2
 		Mat44 transform2 = mTransform2 * inSubShape.GetLocalTransformNoScale(mScale2);
 
-		CollisionDispatch::Instance()->sCollideShapeVsShape(mShape1, inSubShape.mShape, mScale1, inSubShape.TransformScale(mScale2), mTransform1, transform2, mSubShapeIDCreator1, shape2_sub_shape_id, mCollideShapeSettings, mCollector, mShapeFilter);
+		CollisionDispatch::sCollideShapeVsShape(mShape1, inSubShape.mShape, mScale1, inSubShape.TransformScale(mScale2), mTransform1, transform2, mSubShapeIDCreator1, shape2_sub_shape_id, mCollideShapeSettings, mCollector, mShapeFilter);
 	}
 
 	const CollideShapeSettings &	mCollideShapeSettings;
