@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PHYSICS_MANAGER_H
+#define PHYSICS_MANAGER_H
 
 
 // The Jolt headers don't include Jolt.h. Always include Jolt.h before including any other Jolt header.
@@ -444,3 +445,4 @@ public:
 	}
 };
 
+#endif

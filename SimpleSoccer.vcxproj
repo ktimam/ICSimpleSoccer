@@ -960,7 +960,7 @@
     <IntDir>$(Platform)\$(Configuration)\$(ProjectName)</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug3D|x64'">
-    <IncludePath>C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer\TestFramework;C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer;C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer\3rdparty;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer\Utils;C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer\Tests;C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer\TestFramework;C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer;C:\Kiko\MyProjects\Blockchain\ICP\ICSimpleSoccer\3rdparty;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\$(ProjectName)</IntDir>
   </PropertyGroup>

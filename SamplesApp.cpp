@@ -67,6 +67,8 @@
 #include "Common/misc/WindowUtils.h"
 #include "Common/Debug/DebugConsole.h"
 #include "Common/misc/WinHttpWrapper.h"
+//#include "Common/Game/PhysicsManager.h"
+#include <Common/Game/PhysicsManager.h>
 
 using namespace WinHttpWrapper;
 using namespace std;

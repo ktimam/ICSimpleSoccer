@@ -16,7 +16,8 @@
 
 #include "../2D/Vector2D.h"
 #include "BaseGameEntity.h"
-#include "../Game/PhysicsManager.h"
+//#include "../Game/PhysicsManager.h"
+#include <Common/Game/PhysicsManager.h>
 
 
 class MovingEntity : public BaseGameEntity

@@ -10,8 +10,7 @@ export { idlFactory } from "./SimSoccerServer.did.js";
  * beginning in dfx 0.15.0
  */
 export const canisterId =
-  process.env.CANISTER_ID_SIMSOCCERSERVER ||
-  process.env.SIMSOCCERSERVER_CANISTER_ID;
+  process.env.CANISTER_ID_SIMSOCCERSERVER;
 
 export const createActor = (canisterId, options = {}) => {
   const agent = options.agent || new HttpAgent({ ...options.agentOptions });
@@ -40,4 +39,4 @@ export const createActor = (canisterId, options = {}) => {
   });
 };
 
-export const SimSoccerServer = createActor(canisterId);
+export const SimSoccerServer = canisterId ? createActor(canisterId) : undefined;
